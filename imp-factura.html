@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/script/tailwind.config.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/node_modules/tailwindcss/tailwind.css">
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    @media print {
+        .pagebreak {
+            page-break-before: always;
+        }
+    }
+        .ion-title{
+            color:black;
+            font-size:45px;
+        }
+        .ion-submenu{
+            font-size:40px;
+        }
+        .text-title{
+            font-size:60px;
+        }
+        .list-submenu{
+            font-size:24px;
+        }
+        .title-print{
+            font-size:30px
+        }
+    }
+</style>
+    <script>
+        let html = document.querySelector('html');
+        var checkCookie = function () {
+
+
+
+
+            return function () {
+                let x = document.cookie;
+                if (x == "dark") {
+                    html.classList.add('dark')
+                } else {
+                    html.classList.remove('dark')
+                }
+            };
+        }();
+
+        window.setInterval(checkCookie, 1);
+
+    </script>
+    <style>
+    </style>
+</head>
+
+<body class="bg-transparent print:m-0 print:p-0">
+
+    <div class="text-7xl flex dark:text-white items-center print:hidden ">
+        <ion-icon name="cash" class="ion-title text-black-100 mr-10 mt-2 dark:text-white"></ion-icon>
+        <p class="text-title">Impresion de la factura</p>
+    </div>
+    <section class="flex justify-center my-10 print:my-0 print:grid">
+        <button
+            class="bg-blue-900 text-white w-12 h-12 mr-5 hover:shadow-list focus:bg-l rounded flex justify-center items-center print:hidden">
+            <ion-icon name="document-text"></ion-icon>
+        </button>
+        <button
+            class="bg-red-800 text-white w-12 h-12 mr-5 hover:shadow-list focus:bg-l rounded flex justify-center items-center print:hidden"
+            onclick="window.print();return false;">
+            <ion-icon name="print"></ion-icon>
+        </button>
+        <button
+            class="bg-green-900 text-white w-12 h-12 hover:shadow-list focus:bg-l rounded flex justify-center items-center print:hidden">
+            <ion-icon name="stats-chart"></ion-icon>
+        </button>
+    </section>
+    <div class="flex justify-center print:p-0 print:block">
+        <article class="w-208 border p-4 mt-0 mb-32 bg-white border-black print:border-0">
+            <section class="flex bg-stone-400 p-4">
+                <img src="./assets/img/logomc.png" alt="logomega-chevrolet" class="h-24">
+                <p class="flex items-center title-print">MEGA-CHEVROLET EDWIN RUBIO</p>
+            </section>
+            <section class="flex justify-around p-4 rounded border border-black rounded-3xl mb-4">
+                <div>
+                    <label for="factura">Factura N°</label><br>
+                    <input type="text" id="factura" placeholder="XXXX" disabled>
+                </div>
+                <div>
+                    <label for="nombre-adm">Nombre del Administrador</label><br>
+                    <input type="text" id="nombre-adm" class="outline-0 border-black border-b">
+                </div>
+                <div>
+                    <label for="fecha">Fecha</label><br>
+                    <input type="date" id="fecha">
+                </div>
+            </section>
+            <section class="flex h-56">
+                <article class="border border-black p-4 rounded-3xl w-full mr-4 grid grid-rows-4 grid-cols-3"
+                    style="text-align:center;">
+                    <article
+                        class="h-10 mb-4 border-redd border-b border-black flex justify-center items-center col-start-1 col-end-4">
+                        <p>Cliente</p>
+                    </article>
+                    <div class="col-start-1 col-end-4">
+                        <label for="documento">Numero de Documento</label><br>
+                        <input type="text" id="documento" placeholder="xxxxxxxxxx"
+                            class="mb-4 outline-0 border-black border-b">
+                    </div>
+                    <div class="col-start-1 col-end-4">
+                        <label for="nombre-cli">Nombre y Apellidos</label><br>
+                        <input type="text" id="nombre-cli" class="mb-4 outline-0 border-black border-b">
+                    </div>
+                    <div class="col-start-1 col-end-4">
+                        <label for="telefono">Numero de telefono</label><br>
+                        <input type="text" id="telefono" class="mb-4 outline-0 border-black border-b">
+                    </div>
+                </article>
+                <article class="border border-black p-4 rounded-3xl w-full ml-4 grid grid-rows-4 grid-cols-3"
+                    style="text-align:center;">
+                    <article
+                        class="h-10 mb-4 border-redd border-b border-black flex justify-center items-center col-start-1 col-end-4">
+                        <p>Vehiculo</p>
+                    </article>
+                    <div class="col-start-1 col-end-4">
+                        <label for="placa">Placa vehiculo</label><br>
+                        <input type="text" id="placa" class="mb-4 outline-0 border-black border-b">
+                    </div>
+                    <div class="col-start-1 col-end-4">
+                        <label for="modelo">Modelo</label><br>
+                        <input type="text" id="modelo" class="mb-4 outline-0 border-black border-b">
+                    </div>
+                </article>
+            </section>
+            <section>
+                <section class="col-span-3 border border-black p-4 rounded-3xl my-4">
+                    <table class="overflow-y-scroll">
+                        <thead>
+                            <tr class="flex">
+                                <div class="flex justify-center">
+                                    <article
+                                        class="w-80 h-10 mb-4 border-redd border-b flex justify-center items-center">
+                                        <p>Insumos gastados</p>
+                                    </article>
+                                </div>
+                            </tr>
+                        </thead>
+                        <div class="flex justify-center">
+                            <tbody class="grid grid-rows-3 grid-cols-6">
+                                <tr class="flex">
+                                    <td
+                                        class="w-100 h-10 mr-5 flex justify-center items-center text-xl border-b border-black">
+                                        Cambio de aceite
+                                    </td>
+                                    <td
+                                        class="w-100 h-10 flex justify-center items-center text-xl border-b border-black">
+                                    </td>
+                                </tr>
+                                <tr class="flex col-span-7">
+                                    <td
+                                        class="w-full h-10 mr-5 flex justify-center items-center text-xl border-b border-black">
+                                    </td>
+                                    <td
+                                        class="w-full h-10 flex justify-center items-center text-xl border-b border-black">
+                                    </td>
+                                </tr>
+                                <tr class="flex col-span-7">
+                                    <td
+                                        class="w-full h-10 mr-5 flex justify-center items-center text-xl border-b border-black">
+                                    </td>
+                                    <td
+                                        class="w-full h-10 flex justify-center items-center text-xl border-b border-black">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                </section>
+                <div>
+                    <section class="border-black border p-4 mb-8 bg-white rounded-3xl">
+                        <table class="overflow-y-scroll ">
+                            <thead>
+                                <div class="flex justify-center">
+                                    <article
+                                        class="w-80 h-10 mb-4 border-redd border-b flex justify-center items-center">
+                                        <p>Trabajos realizados</p>
+                                    </article>
+                                </div>
+                                <tr class="flex">
+
+                                    <th
+                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Nombre</th>
+                                    <th
+                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Cantidad</th>
+                                    <th
+                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Valor Unitario</th>
+                                    <th
+                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Total</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="flex border-b">
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">Aceite
+                                        1L
+                                    </td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">10</td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">25000
+                                    </td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">250000
+                                    </td>
+                                </tr>
+                                <tr class="flex border-b">
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">Aceite
+                                        1L
+                                    </td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">10</td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">25000
+                                    </td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">250000
+                                    </td>
+                                </tr>
+                                <tr class="flex border-b">
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">Aceite
+                                        1L
+                                    </td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">10</td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">25000
+                                    </td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl">250000
+                                    </td>
+                                </tr>
+                                <tr class="flex">
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl"></td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl"></td>
+                                    <div></div>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl ">
+                                        <strong>Total</strong></td>
+                                    <td class="w-40 h-10 mr-5 rounded flex justify-center items-center text-xl ">
+                                        <strong>75000</strong></td>
+                                </tr>
+                        </table>
+                    </section>
+            </section>
+            <section class="p-2 rounded border border-black rounded-3xl mb-4">
+                <div>
+                    <div class="flex justify-center">
+                        <article class="w-80 h-10 border-redd border-b flex justify-center items-center">
+                            <p>Observaciones</p>
+                        </article>
+                    </div>
+                    <label for="comentarios"></label><br>
+                    <textarea name="comentarios" id="comentarios" cols="100" rows="3"
+                        placeholder="___________________________________________________________"
+                        class="bg-slate-200 w-full"></textarea>
+                </div>
+            </section>
+            <section class="flex bg-stone-400 p-4 justify-around items-center">
+                <article>
+                    <blockquote>correo:megachevroletduitama@gmail.com</blockquote>
+                    <blockquote>cel:3123428041-3178321418</blockquote>
+                    <blockquote>Direccion:Cra 42 N° 8-64</blockquote>
+                </article>
+
+            </section>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </article>
+</body>
+
+</html>

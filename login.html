@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+        body{
+            background-color: #000000;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23220000' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23440000' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23660000' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23880000' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .ion{
+            font-size: 26px;
+        }
+        .ion-small{
+            font-size:20px;
+        }
+        .ion-separator{
+            font-size:30px;
+        }
+        .placeholder{
+            transform:translateY(-70px);
+            transition:.5s;
+        }
+        .shake{
+            border:2px solid;
+            border-color:red;
+            border-radius:5px;
+            animation:shake .3s ;
+            transition:border-color .5s, border 0;
+            transition-delay:0s, 0s;
+        }
+        @keyframes shake{
+            25% {transform: translateX(4px);}
+            50%{ transform: translateX(-4px);}
+            75%{ transform: translateX(4px);}
+        }
+        .error-eyes{
+            transform: translateY(40px);
+            opacity:0;
+            transition-delay:5s;
+        }
+        .error-eyes.error-visible{
+            opacity:1;
+            transition-delay:5s;
+        }
+        .error-eyes{
+            filter:invert(18%) sepia(92%) saturate(3621%) hue-rotate(346deg) brightness(74%) contrast(92%);
+        }
+
+        .form-id:focus ~ .placeholder-id{
+                transform:translate(-16px, -100px) scale(0.8);
+                color:black;
+            }
+            .form-pw:focus ~ .placeholder-pw{
+                transform:translate(-8px, -100px) scale(0.8);
+                color:black;
+            }
+            .form-id:not(:placeholder-shown) ~ .placeholder-id{
+                transform:translate(-16px, -100px) scale(0.8);
+                color:black;
+            }
+            .form-pw:not(:placeholder-shown) ~ .placeholder-pw{
+                transform:translate(-8px, -100px) scale(0.8);
+                color:black;
+            }
+            .error-message{
+                transform:translateY(-40px);
+                font-size:10px;
+                transition-delay:var(--i);
+            }
+            @media (max-height:600px) {
+                .logo-div{
+                    height: 0;
+                }
+            }
+            .recover{
+                transition: .5s;
+            }
+            .recover .login{
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            .recover .recover-1{
+                opacity: 1;
+                height: auto;
+                width: max-content;
+            }
+        }
+      </style>
+
+    <style>
+        .cards.step-1 {
+            transform: translateX(43.4%);
+        }
+        .cards.step-1 .card-1 {
+            opacity: 1;
+        }
+        .cards.step-1 .card-2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-1 .card-3 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-1 .card-4 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-1 .card-5 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-1 .card-6 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-1 .card-7 {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cards.step-2 {
+            transform: translateX(28.92%);
+        }
+        .cards.step-2 .card-1 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-2 .card-2 {
+            opacity: 1;
+        }
+        .cards.step-2 .card-3 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-2 .card-4 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-2 .card-5 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-2 .card-6 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-2 .card-7 {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cards.step-3 {
+            transform: translateX(14.46%);
+        }
+        .cards.step-3 .card-1 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-3 .card-2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-3 .card-3 {
+            opacity: 1;
+        }
+        .cards.step-3 .card-4 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-3 .card-5 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-3 .card-6 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-3 .card-7 {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cards.step-4 {
+            transform: translateX(0%);
+        }
+        .cards.step-4 .card-1 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-4 .card-2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-4 .card-3 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-4 .card-4 {
+            opacity: 1;
+        }
+        .cards.step-4 .card-5 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-4 .card-6 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-4 .card-7 {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cards.step-5 {
+            transform: translateX(-14.46%);
+        }
+        .cards.step-5 .card-1 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-5 .card-2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-5 .card-3 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-5 .card-4 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-5 .card-5 {
+            opacity: 1;
+        }
+        .cards.step-5 .card-6 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-5 .card-7 {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cards.step-6 {
+            transform: translateX(-28.92%);
+        }
+        .cards.step-6 .card-1 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-6 .card-2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-6 .card-3 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-6 .card-4 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-6 .card-5 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-6 .card-6 {
+            opacity: 1;
+        }
+        .cards.step-6 .card-7 {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cards.step-7 {
+            transform: translateX(-43.4%);
+        }
+        .cards.step-7 .card-1 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-7 .card-2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-7 .card-3 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-7 .card-4 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-7 .card-5 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-7 .card-6 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .cards.step-7 .card-7 {
+            opacity: 7;
+        }
+    </style>
+    <title>Login</title>
+    <link rel="shortcut icon" href="assets/img/logo.ico" type="image/x-icon">
+</head>
+
+<body class="overflow-hidden w-screen h-screen">
+    <header class="bg-grayd flex px-24 max-sm:px-10 place-content-between items-center w-screen">
+        <a href=""><img src="assets/img/logo.svg" alt="X" class="header-logo h-8"></a>
+        <ul class="header-modules flex text-white items-center text-header gap-5 py-4">
+            <li>
+                <a href="">
+                    <div class="flex align-center rounded-2xl p-1.5 duration-500 hover:bg-redd">
+                        <ion-icon name="help" class="ion-small"></ion-icon>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main class="screen flex justify-center items-center w-screen h-body overflow-hidden">
+        <div class="content max-sm:-mt-20 duration-500">
+            <div class="logo-div flex justify-center mb-5">
+                <img src="assets/img/logo.svg" alt="X" class="login-container-logo-img w-20 top-14">
+                <img src="assets/img/eyesblack.svg" alt="" class="error-eyes absolute mb-20 w-14 duration-500">
+            </div>
+            <div class="cards step-1 flex gap-10 duration-200">
+                <div
+                    class="form-container card-1 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="index.html" target="_self" class="login">
+                        <div class="form-content">
+                            <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Iniciar
+                                Sesión</p>
+                            <input type="text" required pattern="[0-9]{8,}"
+                                class="form-id w-80 max-sm:w-56 h-10 border-b border-black mb-10 max-sm:mb-9 outline-0"
+                                placeholder=" " id="id">
+                            <label for="" class="error-x-id absolute text-redl ion rotate-45 opacity-0">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br>
+                            <label for="id" class="placeholder placeholder-id absolute text-gray cursor-text">Numero de
+                                documento</label>
+                            <label for=""
+                                class="absolute error-message error-message-id text-redl opacity-0 duration-500"
+                                style="--i:0.2s;">Numeros (0-9)</label>
+
+                            <input type="password" required pattern=".{8,}"
+                                class="form-pw w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw" maxlength="16">
+                            <label for="" class="error-x-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br>
+                            <label for=""
+                                class="absolute error-message error-message-pw text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Minimo 8 caracteres</label>
+
+                            <label for="pw"
+                                class="placeholder placeholder-pw absolute text-gray cursor-text mt-5">Contraseña</label>
+                            <div class="flex items-start">
+                                <label
+                                    class="w-full recover-link text-redd underline text-base cursor-pointer hover:text-redl max-sm:text-sm mt-5 max-sm:mt-0">Olvide
+                                    mi
+                                    contraseña</label>
+                                <div
+                                    class="w-full flex justify-end mt-4 translate-x-5 max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    <div class="max-sm:w-[320px] max-sm:h-2 max-sm:flex max-sm:justify-end">
+                                        <button type="submit"
+                                            class="form-button-login w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-9 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Continuar</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+                <div
+                    class="card-2 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="#" target="_self" class="login">
+                        <div class="form-content">
+                            <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
+                                Contraseña</p>
+
+                            <label for="id-type" class=" placeholder-id text-gray cursor-text">Tipo de
+                                documento</label><br>
+                            <select name="" id="id-type" class="recover-id-type mt-4 mb-5 border border-black">
+                                <option value="">CC</option>
+                                <option value="">TI</option>
+                                <option value="">A</option>
+                            </select>
+                            <br>
+
+                            <label for="id-recover" class="">Numero de
+                                documento</label>
+                            <input type="text" required pattern="[0-9]{8,}"
+                                class="recover-id-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 max-sm:mb-9 outline-0"
+                                placeholder=" " id="id-recover">
+                            <label for="" class="error-x-id-recover absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br>
+                            <label for=""
+                                class="absolute error-message error-message-id-recover text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Numeros (0-9)</label>
+
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-full flex justify-center mt-4 max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
+                                        <button type="button"
+                                            class="recover-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Atras</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                        <button type="submit"
+                                            class="recover-continue w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Siguiente</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+
+
+                <div
+                    class="card-3 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="index.html" target="_self" class="login w-full">
+                        <div class="form-content">
+                            <p class="form-title mt-5 mb-5 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
+                                Contraseña</p>
+
+                            <label for="id-type" class=" placeholder-id text-gray cursor-text">Seleccione un metodo para
+                                recuperar su contraseña:</label>
+                            <div class="w-full h-44 flex justify-center items-center gap-10">
+                                <button type="button" class=" w-32 h-32 rounded-xl hover:shadow-2xl bg-white duration-200">
+                                    <div class="recover-button-online w-full h-2/3 text-black flex justify-center items-end text-[60px]">
+                                        <ion-icon name="earth"></ion-icon>
+                                    </div>
+                                    <div class="w-full h-1/3 text-black flex justify-center items-start ">Web</div>
+                                </button>
+                                <button type="button" class="recover-button-local w-32 h-32 rounded-xl hover:shadow-2xl bg-white duration-200">
+                                    <div class="w-full h-2/3 text-black flex justify-center items-end text-[60px]">
+                                        <ion-icon name="wifi"></ion-icon>
+                                        <div class="absolute w-16 h-1 bg-black rotate-45 -translate-y-8"></div>
+                                    </div>
+                                    <div class="w-full h-1/3 text-black flex justify-center items-start ">Local</div>
+                                </button>
+                            </div>
+
+
+
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-full flex justify-center -mt-[1.2rem] max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
+                                    <button type="button"
+                                        class="recover-method-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                        <p class="max-sm:opacity-0">Atras</p>
+                                        <ion-icon name="arrow-forward"
+                                            class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                        </ion-icon>
+                                    </button>
+                                    <button type="button"
+                                        class="invisible w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                        <p class="max-sm:opacity-0">Siguiente</p>
+                                        <ion-icon name="arrow-forward"
+                                            class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                        </ion-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+                <div
+                    class="card-4 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="#" target="_self" class="login">
+                        <div class="form-content">
+                            <p class="form-title mt-4 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
+                                Contraseña</p>
+
+
+                            <p class="form-title mt-4 mb-4 max-sm:mt-2 max-sm:mb-8" style="font-size: 18px;;">La
+                                pregunta clave que seleccionaste en el registro es:</p>
+
+                            <label for="new-pw" class="verification">"Nombre de tu primera mascota"</label>
+                            <input type="text" required 
+                                class="recover-question-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw" maxlength="6">
+                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br><label for=""
+                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Minimo 8 caracteres</label>
+
+
+
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-full flex justify-center mt-[2.1rem] max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
+                                        <button type="button"
+                                            class="recover-local-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Atras</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+
+
+
+                                        <button type="submit"
+                                            class="recover-local-continue w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Siguiente</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+                <div
+                    class="card-5 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="#" target="" class="login">
+                        <div class="form-content">
+                            <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
+                                Contraseña</p>
+
+                            <label for="new-pw" class=""> Escriba su correo</label>
+                            <input type="text" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z.]{2,20}$"
+                                class="recover-email-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw">
+                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br><label for=""
+                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Minimo 8 caracteres</label>
+
+
+
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-full flex justify-center mt-[6.25rem] max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
+                                        <button type="button"
+                                            class="recover-online-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Atras</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                        <button type="submit"
+                                            class="recover-online-continue send-email w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Siguiente</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="https://smtpjs.com/v3/smtp.js">
+                            </script>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div
+                    class="card-6 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="#" target="_self" class="login">
+                        <div class="form-content">
+                            <p class="form-title mt-4 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
+                                Contraseña</p>
+
+                            <label for="new-pw" class="verification">Escriba el codigo de 6 digitos que llego a su
+                                correo</label>
+                            <input type="text" required pattern="[0-9]{6,}"
+                                class="checkrn w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw" maxlength="6">
+                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <p for="" class="resend-email text-redd w-full">Reenviar correo</p>
+                            <br><label for=""
+                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Minimo 8 caracteres</label>
+
+
+
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-full flex justify-center mt-[2rem] max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
+                                        <button type="button"
+                                            class="recover-code-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Atras</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+
+
+
+                                        <button type="submit"
+                                            class="recover-code-continue check-randomnumber form-button-new-pw-submit w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Siguiente</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+
+
+
+
+
+                <div
+                    class="card-7 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
+                    <form action="" target="_self" class="login">
+                        <div class="form-content">
+                            <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
+                                Contraseña</p>
+
+                            <label for="new-pw" class="">Nueva contraseña</label>
+                            <input type="password" required pattern=".{8,}"
+                                class="recover-new-pw w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw" maxlength="16">
+                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br><label for=""
+                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Minimo 8 caracteres</label>
+
+                            <label for="new-pw-confirm" class="">Confirmar contraseña</label>
+                            <input type="password" required pattern=".{8,}"
+                                class="recover-new-pw-confirm w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw-confirm" maxlength="16">
+                            <label for=""
+                                class="error-x-new-pw-confirm absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
+                            </label>
+                            <br><label for=""
+                                class="absolute error-message error-message-new-pw-confirm text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Minimo 8 caracteres</label>
+
+
+                            <div class="flex items-start">
+                                <div
+                                    class="w-full flex justify-center mt-4 max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
+                                        <button type="button"
+                                            class="recover-new-password-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Atras</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                        <button type="submit"
+                                            class="recover-new-password-continue w-24 h-12 max-sm:w-20 max-sm:h-12 bg-redd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
+                                            <p class="max-sm:opacity-0">Siguiente</p>
+                                            <ion-icon name="arrow-forward"
+                                                class="absolute text-redd invisible max-sm:visible text-[24px]">
+                                            </ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="error-container w-40 h-12 bg-white absolute bottom-10 rounded text-redd flex justify-center items-center duration-200">
+            <ion-icon name="add" class="text-[30px] rotate-45"></ion-icon>
+            <p class="error-text"></p>
+        </div>
+    </main>
+    <footer class="max-sm:absolute bottom-0 bg-grayd w-full text-white h-8 flex items-center">
+        <ul class="absolute flex gap-5 right-8">
+            <li class=""><a href="" class="hover:underline">Empresa</a></li>
+            <li class=""><a href="" class="hover:underline">Creditos</a></li>
+        </ul>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script/login.js">
+    </script>
+    <script src="script/login2.js">
+    </script>
+    <script src="script/tailwind.config.js">
+    </script>
+</body>
+
+</html>

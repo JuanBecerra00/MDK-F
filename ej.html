@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <style type="text/tailwindcss">
+        @layer utilities {
+          
+        }
+      </style>
+      <style>
+        .enabled-desabled.active{
+          transition: .5s;
+        }
+        .enabled-desabled.active .enabled-desabled-dot{
+          justify-self: end;
+          background: #b81d28;
+        }
+      </style>
+</head>
+<body class="flex justify-center items-center h-96 m-0 p-0">
+  <div class="enabled-desabled bg-gray-200 h-4 w-8 rounded-3xl flex items-center active duration-200">
+    <div class="enabled-desabled-dot h-4 w-4 rounded-3xl bg-green-600 border border-gray-200"></div>
+  </div>
+  <script src="script/dot.js"></script>
+  <script src="script/tailwind.config.js"></script>
+</body>
+</html>

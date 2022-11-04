@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="/script/tailwind.config.js"></script>
+    <link rel="stylesheet" href="/node_modules/tailwindcss/tailwind.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+        .ion-title{
+            color:black;
+            font-size:65px;
+        }
+        .ion-submenu{
+            font-size:40px;
+        }
+        .text-title{
+            font-size:60px;
+        }
+        .list-submenu{
+            font-size:24px;
+        }
+    }
+    
+</style>
+    <script>
+        let html = document.querySelector('html');
+        var checkCookie = function () {
+
+
+
+
+            return function () {
+                let x = document.cookie;
+                if (x == "dark") {
+                    html.classList.add('dark')
+                } else {
+                    html.classList.remove('dark')
+                }
+            };
+        }();
+
+        window.setInterval(checkCookie, 1);
+
+
+
+    </script>
+    <style>
+    </style>
+</head>
+
+<body class="mt-16 mx-16 bg-transparent dark:text-white">
+    <div class="text-7xl flex items-center">
+        <ion-icon name="cash" class="ion-title text-black-100 mr-10 dark:text-white"></ion-icon>
+        <p class="text-title">Facturacion</p>
+    </div>
+    <p class="my-8">Seleccione el mantenimiento que se realizo al vehiculo</p>
+
+    <article class="w-40 h-10 mb-8 border-red-800 border-b flex justify-center items-center text-redd-500">
+        <p>Datos del cliente</p>
+    </article>
+    <div class="grid grid-cols-4 mb-8 ">
+        <section class="border-black border mr-5 p-8 col-span-3 rounded-3xl dark:bg-darkgrayl">
+            <article>
+                <ion-icon name="person"></ion-icon>Cliente
+            </article>
+            <article class="my-8">
+                <label for="documento">Documento del cliente</label><br>
+                <input type="text" id="documento" required pattern="[0-9]{8,}" class="outline-0 border-black border-b bg-transparent dark:border-white">
+            </article>
+            <article class="grid grid-cols-3">
+                <div>
+                    <label for="nombre">Nombres</label><br>
+                    <input type="text" id="nombre" placeholder="Benito Khalo" class="outline-0 border-black border-b bg-transparent dark:border-white">
+                </div>
+                <div>
+                    <label for="telefono">Telefono</label><br>
+                    <input type="text" id="telefono" class="outline-0 border-black border-b  bg-transparent dark:border-white">
+                </div>
+                <div>
+                    <label for="correo">Correo</label><br>
+                    <input type="email" id="correo" class="outline-0 border-black border-b  bg-transparent dark:border-white">
+                </div>
+            </article>
+        </section>
+        <section class="border-black border p-8 bg-white rounded-3xl bg-white dark:bg-darkgrayl ">
+            <p>
+                <ion-icon name="person"></ion-icon>Veliculo
+            </p>
+            <div class="my-8">
+                <label for="placa">Placa</label><br>
+                <input type="text" id="placa" class="outline-0 border-black border-b  bg-transparent dark:border-white"><br>
+            </div>
+            <div>
+                <label for="model">Modelo</label><br>
+                <input type="text" id="model" class="outline-0 border-black border-b  bg-transparent dark:border-white">
+            </div>
+        </section>
+    </div>
+    <div>
+        <article class="grid grid-cols-5">
+            <article
+                class="w-40 h-10 mb-4 border-red-800 border-b flex justify-center items-center text-redd-500 col-start-1 col-end-2 ">
+                <p>Trabajos realizados</p>
+            </article>
+            <a href="./op-factura.html" target="display" class="col-end-8 col-span-2">
+                <button
+                    class="bg-red-800 text-white w-12 h-12 hover:shadow-list focus:bg-l rounded flex justify-center items-center">
+                    <ion-icon name="list" class="text-white col-start-1 col-end-2"></ion-icon>
+                </button>
+            </a>
+
+        </article>
+        <div class="grid grid-cols-4 border-black border p-8 bg-white rounded-3xl dark:bg-darkgrayl">
+            <section class="col-span-3">
+                <table class="overflow-y-scroll">
+                    <thead>
+                        <tr class="flex">
+                            <p>
+                                <ion-icon name="car"></ion-icon>Procedimientos
+                            </p>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="flex">
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b">Cambio de
+                                aceite
+                            </td>
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b">
+                            </td>
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b"></td>
+                        </tr>
+                        <tr class="flex">
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b">
+                            </td>
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b"></td>
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b"></td>
+                        </tr>
+                        <tr class="flex ">
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b">
+                            </td>
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b"></td>
+                            <td class="w-96 h-12 mr-5 flex justify-center items-center text-xl border-b"></td>
+                        </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+    <div>
+        <article class="w-40 h-10 my-8 border-red-800 border-b flex justify-center items-center text-redd-500">
+            <p>Insumos gastados</p>
+        </article>
+        <section class="border-black border mr-5 p-8 mb-8 bg-white rounded-3xl dark:bg-darkgrayl">
+            <table class="overflow-y-scroll ">
+                <thead>
+                    <tr class="flex">
+                        <p>
+                            <ion-icon name="person"></ion-icon>Gastos
+                        </p>
+                        <th class="list-select-all flex justify-center items-center mr-5 duration-500">
+                            <ion-icon name="caret-down"
+                                class="rounded-xl p-1 -m-1 duration-500 cursor-pointer hover:bg-red-300">
+                            </ion-icon>
+                        </th>
+                        <th
+                            class="w-40 h-10 mr-5 border-red-800 border-b flex justify-center items-center text-redd-500">
+                            Nombre</th>
+                        <th
+                            class="w-40 h-10 mr-5 border-red-800 border-b flex justify-center items-center text-redd-500">
+                            Cantidad</th>
+                        <th
+                            class="w-40 h-10 mr-5 border-red-800 border-b flex justify-center items-center text-redd-500">
+                            Valor Unitario</th>
+                        <th
+                            class="w-40 h-10 mr-5 border-red-800 border-b flex justify-center items-center text-redd-500">
+                            Total</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flex border-b">
+                        <td class="flex justify-center items-center mr-5">
+                            <input type="checkbox" class="listcheck" onclick="checkchecks()">
+                        </td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Aceite 1L
+                        </td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">10</td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">25000</td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">250000</td>
+                    </tr>
+                    <tr class="flex border-b">
+                        <td class="flex justify-center items-center mr-5">
+                            <input type="checkbox" class="listcheck" onclick="checkchecks()">
+                        </td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Aceite 1L
+                        </td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">10</td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">25000</td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">250000</td>
+                    </tr>
+                    <tr class="flex border-b">
+                        <td class="flex justify-center items-center mr-5"><input type="checkbox" class="listcheck"
+                                onclick="checkchecks()"></td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Aceite 1L
+                        </td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">10</td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">25000</td>
+                        <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">250000</td>
+                    </tr>
+            </table>
+        </section>
+    </div>
+    <div>
+        <article class="w-40 h-10 border-red-800 border-b flex justify-center items-center text-redd-500">
+            <p>Observaciones</p>
+        </article>
+        <label for="comentarios"></label><br>
+        <textarea name="comentarios" id="comentarios" cols="120" rows="6" placeholder="_______________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________
+_____________________________________________________________________" class="bg-slate-200 dark:bg-darkgrayl"></textarea>
+    </div>
+    <div class="flex justify-end m-8">
+        <a href="./imp-factura.html" target="display">
+            <button
+                class="bg-red-800 text-white w-28 h-12 rounded flex items-center justify-center hover:shadow-list focus:bg-l">
+                <ion-icon name="arrow-forward" class="text-white mr-2"></ion-icon>Siguiente
+            </button>
+        </a>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
