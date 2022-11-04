@@ -7,6 +7,8 @@ let exit = document.querySelector('.submenu-exit');
 submenubutton.onclick = function () {
     submenubutton.classList.add('active')
     submenu.focus()
+    
+    usermobile.classList.toggle('max-sm:translate-x-full')
 }
 submenubuttonlocker.onclick = function () {
     submenubutton.classList.add('active')
@@ -23,4 +25,13 @@ submenu.onblur = function () {
     submenu.classList.remove('active')
     submenubuttonlocker.classList.remove('active')
     submenubuttonlocker.classList.add('opacity-0')
+}
+
+
+let asidemobilebutton = document.querySelector('.aside-mobile-button');
+let asidemobile = document.querySelector('.aside-mobile');
+let usermobile = document.querySelector('.user-mobile');
+
+asidemobilebutton.onclick = function() {
+    asidemobile.classList.toggle('max-sm:-translate-x-full')
 }

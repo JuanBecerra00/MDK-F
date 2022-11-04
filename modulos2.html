@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let html = document.querySelector('html');
+        let x = document.cookie;
+
+        window.onload = function () {
+            if (x == "dark") {
+                html.classList.add('dark')
+
+            } else {
+                html.classList.remove('dark')
+            }
+        };
+
+
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+        body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .ion{
+            font-size: 26px;
+        }
+        .ion-small{
+            font-size:20px;
+        }
+        .ion-card{
+            font-size:82px;
+        }
+        .ion-separator{
+            font-size:30px;
+        }
+        
+        @keyframes pop{
+            10% {
+                transform:scale(.9);
+            }
+        }
+        .header-submenu-button-locker{
+            transition: .7s;
+        }
+        .header-submenu-button-locker.active{
+            width: 133px;
+            height: 50px;
+            transition: 0;
+        }
+        .header-submenu-button-locker.active:hover{
+            border: 1px solid #b81d28;
+        }
+        }
+    </style>
+    <style>
+        @media not all and (min-width: 640px) {
+            
+        }
+        @media not all and (max-width: 640px) {
+            .header-submenu{
+                z-index: -1;
+                transition: transform .5s, width .5s, height .5s, padding .5s, border-radius .5s, box-shadow .5s;
+                transition-delay: 1.2s, .7s, .5s, .7s, .7s, .5s;
+                font-size:14px;
+            }
+            .header-submenu.active{
+                width: 120px;
+                height: 140px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.6);;
+                transform: translateY(80px);
+                transition-delay: 0.2s, .5s, .7s, .5s, .5s, .5s;
+            }
+            .arrowtop{
+                left:calc(50% - 8px);
+            }
+            .header-submenu.active .arrowtop{
+                top:-5px;
+            }
+            .header-submenu li{
+                transition-delay:calc(0s + var(--i));
+            }
+            .header-submenu.active li{
+                opacity:1;
+                visibility:visible;
+                transition:.5s;
+                transition-delay:calc(1s + var(--i));
+            }
+            .header-submenu.active a:hover{
+                transition-delay: 0s;
+                transition:.5s;
+                background:#221e1e;
+                color: #b81d28;
+            }
+            .header-submenu-button.active{
+            animation: pop .5s;
+            }
+         }
+    </style>
+</head>
+<body class="dark:bg-darkgrayd max-sm:w-screen max-sm:h-screen max-sm:overflow-hidden">
+    <header class="bg-grayd fixed  max-sm:static w-screen flex px-20 max-sm:px-5 place-content-between items-center z-50 overflow-visible h-20">
+        <div class="flex align-center rounded-2xl p-1.5 duration-500 text-white">
+            <ion-icon name="menu" class="aside-mobile-button text-[24px] sm:w-0 sm:invisible sm:h-0"></ion-icon>
+            <a href="index.html"><img src="assets/img/logo.svg" alt="X" class="header-logo h-8 max-sm:w-0 max-sm:invisible max-sm:h-0" tabindex="1"></a>
+        </div>
+        <a href="index.html"><img src="assets/img/logo.svg" alt="X" class="header-logo h-8 sm:w-0 sm:invisible sm:h-0" tabindex="1"></a>
+        <ul class="header-modules flex text-white items-center text-header">
+            <li class="max-sm:w-0 max-sm:invisible max-sm:h-0">
+                <a href="" tabindex="1">
+                    <div class="flex align-center rounded-2xl p-1.5 duration-500 hover:bg-redd">
+                        <ion-icon name="help" class="ion-small"></ion-icon>
+                    </div>
+                </a>
+            </li>
+            <li class="max-sm:w-0 max-sm:invisible max-sm:h-0">
+                <div class="flex align-center rounded-2xl p-1.5 p-0 rotate-90 ion-separator">
+                    <ion-icon name="remove-outline" class=""></ion-icon>
+                </div>
+            </li>
+            <li class="submenu-li ">
+                <div class="header-submenu-div relative flex justify-center">
+                    <button
+                        class="header-submenu-button flex p-1.5 max-sm:p-0 duration-500 flex items-center gap-2 max-sm:gap-0 border border-grayd rounded hover:border-redd cursor-pointer px-3" tabindex="1">
+                        
+                        <ion-icon name="person" style="font-size: 24px;"></ion-icon>
+                    <div class="max-sm:invisible max-sm:w-0">
+                        <strong>Juan Becerra</strong>
+                        <p>Administrador</p>
+                    </div>
+                    </button>
+                    <button
+                        class="header-submenu-button-locker absolute -ml-2 opacity-0 border-grayd rounded" tabindex="1">
+                    </button>
+                    <div class="header-submenu max-sm:invisible absolute w-7 h-7 bg-grayd rounded-2xl ease-in-out shadow-custom " tabindex="1">
+                        <div
+                            class="arrowtop absolute w-4 h-4 bg-grayd top-1 rotate-45 rounded-sm duration-500 delay-700 ease-in-out flex">
+                        </div>
+                        <ul class="header-submenu-ul flex flex-col m-5">
+                            <li style="--i:0s;" class="submenu-profile opacity-0 invisible duration-500">
+                                <a href="#" class="flex items-center mb-2.5 duration-500" tabindex="1">
+                                    <span class="w-7 mr-2.5 flex justify-center">
+                                        <ion-icon name="person" class="ion"></ion-icon>
+                                    </span> <span for="">Perfil</span>
+                                </a>
+                            </li>
+                            <li style="--i:0.1s;" class="submenu-settings opacity-0 invisible duration-500">
+                                <a href="#" class=" flex items-center mb-2.5 duration-500" tabindex="1">
+                                    <span class="w-7 mr-2.5 flex justify-center">
+                                        <ion-icon name="cog" class="ion"></ion-icon>
+                                    </span> <span for="">Ajustes</span>
+                                </a>
+                            </li>
+                            <li style="--i:0.2s;" class="submenu-exit opacity-0 invisible duration-500">
+                                <a href="login.html" class="flex items-center mb-2.5 duration-500" tabindex="1">
+                                    <span class="w-7 mr-2.5 flex justify-center">
+                                        <ion-icon name="exit" class="ion"></ion-icon>
+                                    </span> <span for="">Salir</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ml-2">
+                    </div>
+            </li>
+        </ul>
+    </header>
+    <div class="aside-mobile max-sm:h-screen max-sm:w-screen max-sm:bg-redd max-sm:-translate-x-full max-sm:absolute duration-200"></div>
+    <div class="user-mobile max-sm:h-screen max-sm:w-screen max-sm:bg-green-500 max-sm:translate-x-full max-sm:absolute duration-200"></div>
+    <footer class="absolute bottom-0 bg-grayd w-full text-white h-8">
+        <ul class="absolute flex gap-5 inset-y-0 right-8">
+            <li><a href="" class="align-middle hover:underline">Empresa</a></li>
+            <li><a href="" class="align-middle hover:underline">Creditos</a></li>
+        </ul>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/tailwind.config.js"></script>
+</body>
+</html>
