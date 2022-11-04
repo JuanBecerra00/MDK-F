@@ -12,11 +12,13 @@ userid.onclick = function () {
         xid.classList.add('opacity-0')
         errorid.classList.add('opacity-0')
         eyes.classList.remove('error-visible')
-        if (userid.validity.valid) {
-            userid.classList.add('shake')
-            xid.classList.remove('opacity-0')
-            errorid.classList.remove('opacity-0')
-            eyes.classList.add('error-visible')
+        if (userid.value!=""){
+            if (userid.validity.valid==false) {
+                userid.classList.add('shake')
+                xid.classList.remove('opacity-0')
+                errorid.classList.remove('opacity-0')
+                eyes.classList.add('error-visible')
+            }
         }
     }
 }
@@ -47,11 +49,13 @@ loginbutton.onclick = function() {
     if(userid.value==""){
         userid.classList.add('shake')
         xid.classList.remove('opacity-0')
+        errorid.classList.remove('opacity-0')
         eyes.classList.add('error-visible')
     }
     if(formpw.value==""){
         formpw.classList.add('shake')
         xpw.classList.remove('opacity-0')
+        errorpw.classList.remove('opacity-0')
         eyes.classList.add('error-visible')
     }
 }

@@ -345,7 +345,7 @@
                         <div class="form-content">
                             <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Iniciar
                                 Sesión</p>
-                            <input type="text" required pattern="[0-9]{8,}"
+                            <input type="text" required pattern="[0-9]{1,}"
                                 class="form-id w-80 max-sm:w-56 h-10 border-b border-black mb-10 max-sm:mb-9 outline-0"
                                 placeholder=" " id="id">
                             <label for="" class="error-x-id absolute text-redl ion rotate-45 opacity-0">
@@ -398,7 +398,7 @@
 
                 <div
                     class="card-2 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
-                    <form action="#" target="_self" class="login">
+                    <form action="#" target="_self" class="">
                         <div class="form-content">
                             <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
                                 Contraseña</p>
@@ -414,15 +414,15 @@
 
                             <label for="id-recover" class="">Numero de
                                 documento</label>
-                            <input type="text" required pattern="[0-9]{8,}"
+                            <input type="text" required pattern="[0-9]{1,}"
                                 class="recover-id-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 max-sm:mb-9 outline-0"
                                 placeholder=" " id="id-recover">
-                            <label for="" class="error-x-id-recover absolute text-redl ion rotate-45 opacity-0 mt-1">
+                            <label for="" class="recover-error-x absolute text-redl ion rotate-45 opacity-0 mt-1">
                                 <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
                             </label>
                             <br>
                             <label for=""
-                                class="absolute error-message error-message-id-recover text-redl opacity-0 duration-500 mt-5"
+                                class="absolute error-message recover-error-label error-message-id-recover text-redl opacity-0 duration-500 mt-5"
                                 style="--i:0.2s;">Numeros (0-9)</label>
 
 
@@ -513,7 +513,7 @@
 
                 <div
                     class="card-4 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
-                    <form action="#" target="_self" class="login">
+                    <form action="#" target="_self" class="">
                         <div class="form-content">
                             <p class="form-title mt-4 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
                                 Contraseña</p>
@@ -524,14 +524,14 @@
 
                             <label for="new-pw" class="verification">"Nombre de tu primera mascota"</label>
                             <input type="text" required 
-                                class="recover-question-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
-                                placeholder=" " id="pw" maxlength="6">
-                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                class="recover-local-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                placeholder=" " id="pw" maxlength="" pattern="[a-z]{4,}">
+                            <label for="" class="recover-local-error-label absolute text-redl ion rotate-45 opacity-0 mt-1">
                                 <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
                             </label>
                             <br><label for=""
-                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
-                                style="--i:0.2s;">Minimo 8 caracteres</label>
+                                class="absolute error-message recover-local-error-x text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Respuesta incorrecta</label>
 
 
 
@@ -569,7 +569,7 @@
 
                 <div
                     class="card-5 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
-                    <form action="#" target="" class="login">
+                    <form action="#" target="" class="">
                         <div class="form-content">
                             <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
                                 Contraseña</p>
@@ -579,12 +579,12 @@
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z.]{2,20}$"
                                 class="recover-email-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
                                 placeholder=" " id="pw">
-                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                            <label for="" class="recover-online-error-label absolute text-redl ion rotate-45 opacity-0 mt-1">
                                 <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
                             </label>
                             <br><label for=""
-                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
-                                style="--i:0.2s;">Minimo 8 caracteres</label>
+                                class="absolute error-message recover-online-error-x text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">correo@ejemplo.com</label>
 
 
 
@@ -619,7 +619,7 @@
 
                 <div
                     class="card-6 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
-                    <form action="#" target="_self" class="login">
+                    <form action="#" target="_self" class="">
                         <div class="form-content">
                             <p class="form-title mt-4 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
                                 Contraseña</p>
@@ -627,22 +627,22 @@
                             <label for="new-pw" class="verification">Escriba el codigo de 6 digitos que llego a su
                                 correo</label>
                             <input type="text" required pattern="[0-9]{6,}"
-                                class="checkrn w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                class="recover-code-input w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
                                 placeholder=" " id="pw" maxlength="6">
-                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                            <label for="" class="recover-code-error-x absolute text-redl ion rotate-45 opacity-0 mt-1">
                                 <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
                             </label>
-                            <p for="" class="resend-email text-redd w-full">Reenviar correo</p>
                             <br><label for=""
-                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
-                                style="--i:0.2s;">Minimo 8 caracteres</label>
+                                class="absolute recover-code-error-label error-message text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;"></label>
+                                <p for="" class="resend-email text-redd w-full cursor-pointer">Reenviar correo</p>
 
 
 
 
                             <div class="flex items-start">
                                 <div
-                                    class="w-full flex justify-center mt-[2rem] max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
+                                    class="w-full flex justify-center mt-[3.5rem] max-sm:translate-x-0 max-sm:absolute max-sm:w-full max-sm:left-0 max-sm:mt-10 max-sm:justify-center max-sm:flex max-sm:px-10">
                                     <div class="max-sm:w-[320px] max-sm:h-2 max-sm:justify-center flex gap-40">
                                         <button type="button"
                                             class="recover-code-cancel w-24 h-12 max-sm:w-20 max-sm:h-12 bg-grayd text-white rounded-md duration-300 hover:shadow-list mt-2 max-sm:w-20 max-sm:translate-x-0 max-sm:h-12 max-sm:absolute max-sm:bg-white flex justify-center items-center">
@@ -678,33 +678,33 @@
 
                 <div
                     class="card-7 duration-200 bg-white w-[26rem] max-sm:w-80 max-sm:h-[22rem] h-[25rem] max-sm:h-[19.5rem] p-10 bg-white rounded-lg flex justify-center">
-                    <form action="" target="_self" class="login">
+                    <form action="" target="_self" class="">
                         <div class="form-content">
                             <p class="form-title mt-5 mb-10 max-sm:mt-2 max-sm:mb-8" style="font-size: 24px;;">Recuperar
                                 Contraseña</p>
 
                             <label for="new-pw" class="">Nueva contraseña</label>
                             <input type="password" required pattern=".{8,}"
-                                class="recover-new-pw w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                class="recover-newpw w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
                                 placeholder=" " id="pw" maxlength="16">
-                            <label for="" class="error-x-new-pw absolute text-redl ion rotate-45 opacity-0 mt-1">
+                            <label for="" class="recover-newpw-error-x1 absolute text-redl ion rotate-45 opacity-0 mt-1">
                                 <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
                             </label>
                             <br><label for=""
-                                class="absolute error-message error-message-new-pw text-redl opacity-0 duration-500 mt-5"
+                                class="absolute error-message recover-newpw-error-label1 text-redl opacity-0 duration-500 mt-5"
                                 style="--i:0.2s;">Minimo 8 caracteres</label>
 
                             <label for="new-pw-confirm" class="">Confirmar contraseña</label>
                             <input type="password" required pattern=".{8,}"
-                                class="recover-new-pw-confirm w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
+                                class="recover-newpw-confirm w-80 max-sm:w-56 h-10 border-b border-black mb-5 outline-0"
                                 placeholder=" " id="pw-confirm" maxlength="16">
                             <label for=""
-                                class="error-x-new-pw-confirm absolute text-redl ion rotate-45 opacity-0 mt-1">
+                                class="recover-newpw-error-x2 absolute text-redl ion rotate-45 opacity-0 mt-1">
                                 <ion-icon name="add-outline" style="font-size: 30px;"></ion-icon>
                             </label>
                             <br><label for=""
-                                class="absolute error-message error-message-new-pw-confirm text-redl opacity-0 duration-500 mt-5"
-                                style="--i:0.2s;">Minimo 8 caracteres</label>
+                                class="absolute error-message recover-newpw-error-label2 text-redl opacity-0 duration-500 mt-5"
+                                style="--i:0.2s;">Las contraseñas no concuerdan</label>
 
 
                             <div class="flex items-start">
@@ -737,10 +737,6 @@
 
 
             </div>
-        </div>
-        <div class="error-container w-40 h-12 bg-white absolute bottom-10 rounded text-redd flex justify-center items-center duration-200">
-            <ion-icon name="add" class="text-[30px] rotate-45"></ion-icon>
-            <p class="error-text"></p>
         </div>
     </main>
     <footer class="max-sm:absolute bottom-0 bg-grayd w-full text-white h-8 flex items-center">
