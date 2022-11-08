@@ -171,96 +171,93 @@
 
     <div class="absolute reg-bg h-screen w-screen z-10"></div>
     <div
-        class="reg h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:mx-16 max-sm:block max-sm:justify-center max-sm:overflow-scroll max-sm:w-screen">
+        class="reg h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl  max-sm:block max-sm:justify-center max-sm:overflow-y-scroll max-sm:overflow-x-hidden max-sm:w-screen">
         <div class="p-10 max-sm:p-5">
             <div
-                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-1 max-sm:text-center">
+                class="text-7xl flex mt-10 items-center justify-center max-sm:block max-sm:mt-0 max-sm:text-center">
                 <ion-icon name="file-tray-full"
-                    class="ion-title text-black-100 mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
+                    class="ion-title mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
                 <p class="text-cardtitle">Registro de Insumos</p>
             </div>
-            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:text-center">
-                <form>
-                    <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
-                        <label for="n-document">ID</label><br>
-                        <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxx" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                        <br>
-                        <label for="name">Nombre del producto</label><br>
-                        <input type="text" id="name" placeholder="Camaro"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                        <br>
-                        <label for="name and last">Cantidad</label><br>
-                        <input type="text" id="name and last" placeholder="5" pattern=".{8,}" maxlength="7"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                    </div>
-                    <div class="mx-12">
-                        <label for="city">Valor unitario</label><br>
-                        <input type="city" id="city" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4 "
-                            disabled><br>
-                        <label for="cell-phone"> N° de factura</label><br>
-                        <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                        <label for="cell-phone"> Fecha de compra</label><br>
-                        <input type="date" id="cell-phone" pattern=".{8,}" maxlength="13" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                    </div>
-                </form>
-            </div>
-            <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3">
-                <button class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
-                <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
-            </div>
-        </div>
-
-
-    </div>
-    <div
-        class="edit h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:mx-16 max-sm:block max-sm:justify-center max-sm:overflow-scroll max-sm:w-screen">
-        <div class="p-10 max-sm:p-5">
-            <div
-                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-1 max-sm:text-center">
-                <ion-icon name="create"
-                    class="ion-title text-black-100 mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
-                <p class="text-cardtitle">Editar Insumos</p>
-            </div>
-            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:text-center">
+            <form
+                class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:items-center max-sm:w-screen">
                 <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
                     <label for="n-document">ID</label><br>
                     <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxx" required
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm-mb-4">
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
                     <br>
                     <label for="name">Nombre del producto</label><br>
                     <input type="text" id="name" placeholder="Camaro"
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm-mb-4">
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
                     <br>
                     <label for="name and last">Cantidad</label><br>
                     <input type="text" id="name and last" placeholder="5" pattern=".{8,}" maxlength="7"
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm-mb-4">
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
                 </div>
                 <div class="">
                     <label for="city">Valor unitario</label><br>
                     <input type="city" id="city" required
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm-mb-4 "
-                        disabled><br>
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4 "><br>
                     <label for="cell-phone"> N° de factura</label><br>
                     <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm-mb-4"><br>
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
                     <label for="cell-phone"> Fecha de compra</label><br>
                     <input type="date" id="cell-phone" pattern=".{8,}" maxlength="13" required
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm-mb-4"><br>
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
                 </div>
-                </form>
+            </form>
+            <div
+                class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3 max-sm:mt-3">
+                <button class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
+                <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
             </div>
-            <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3">
-                <button class="delete-edit-button bg-grayd text-white w-24 h-10 rounded mr-52 max-sm:mr-4">Desactivar</button>
+        </div>
+    </div>
+    <div
+        class="edit h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl  max-sm:block max-sm:justify-center max-sm:overflow-y-scroll max-sm:overflow-x-hidden max-sm:w-screen">
+        <div class="p-10 max-sm:p-5">
+            <div
+                class="text-7xl flex mt-10 items-center justify-center max-sm:block max-sm:mt-0 max-sm:text-center">
+                <ion-icon name="create"
+                    class="ion-title mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
+                <p class="text-cardtitle">Editar Insumos</p>
+            </div>
+            <form
+                class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:items-center max-sm:w-screen">
+                <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
+                    <label for="n-document">ID</label><br>
+                    <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxx" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                    <br>
+                    <label for="name">Nombre del producto</label><br>
+                    <input type="text" id="name" placeholder="Camaro"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                    <br>
+                    <label for="name and last">Cantidad</label><br>
+                    <input type="text" id="name and last" placeholder="5" pattern=".{8,}" maxlength="7"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                </div>
+                <div class="">
+                    <label for="city">Valor unitario</label><br>
+                    <input type="city" id="city" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"
+                        ><br>
+                    <label for="cell-phone"> N° de factura</label><br>
+                    <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="cell-phone"> Fecha de compra</label><br>
+                    <input type="date" id="cell-phone" pattern=".{8,}" maxlength="13" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                </div>
+            </form>
+            <div
+                class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3 max-sm:mt-3">
+                <button
+                    class="delete-edit-button bg-grayd text-white w-24 h-10 rounded mr-52 max-sm:mr-4">Desactivar</button>
                 <button class="cancel-edit-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
                 <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
             </div>
         </div>
-
-    </div>
     </div>
     <div class="mx-16 pt-16">
         <div class="">

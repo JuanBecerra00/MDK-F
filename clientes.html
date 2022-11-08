@@ -171,118 +171,109 @@
 
     <div class="absolute reg-bg h-screen w-screen z-10"></div>
     <div
-        class="reg h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:mx-16 max-sm:block max-sm:justify-center  max-sm:w-screen">
+        class="reg h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl  max-sm:block max-sm:justify-center max-sm:overflow-y-scroll max-sm:overflow-x-hidden max-sm:w-screen">
         <div class="p-10 max-sm:p-5">
             <div
-                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-1 max-sm:text-center">
+                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-0 max-sm:text-center">
                 <ion-icon name="people"
                     class="ion-title text-black-100 mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
                 <p class="text-cardtitle">Registro de Cliente</p>
             </div>
-            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:text-center">
-                <form>
-                    <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
-                        <label for="document">Tipo de Documento</label><br>
-                        <select name="document" id="document" class="mb-8 border bg-transparent dark:border-white">
-                            <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
-                        <br>
-                        <label for="n-document">Nombre</label><br>
-                        <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxxxxxxxxx"
-                            required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                        <br>
-                        <label for="name">Nombres y Apellidos</label><br>
-                        <input type="text" id="name" placeholder="Pepito Perez"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                        <br>
-                        <label for="name and last">Placas del vehículo</label><br>
-                        <input type="text" id="name and last" placeholder="MDB-984" pattern=".{8,}" maxlength="7"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                    </div>
-                    <div class="">
-                        <label for="city">Numero de documento</label><br>
-                        <input type="city" id="city" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                        <label for="cell-phone"> Número de celular</label><br>
-                        <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                        <label for="correo">Correo electronico</label><br>
-                        <input type="email" id="correo" placeholder="ejemplo@gmail.com"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                        <label for="correo">Ciudad de procedencia</label><br>
-                        <input type="email" id="correo" placeholder="Ej. Bogota"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                    </div>
-                </form>
+            <form class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:items-center max-sm:w-screen">
+                <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
+                    <label for="document">Tipo de Documento</label><br>
+                    <select name="document" id="document" class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                        <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                        <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                    <br>
+                    <label for="n-document">Número de documento</label><br>
+                    <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxxxxxxxxx" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                    <br>
+                    <label for="name">Nombres y Apellidos</label><br>
+                    <input type="text" id="name" placeholder="Pepito Perez"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                    <br>
+                    <label for="name and last">Placas del vehículo</label><br>
+                    <input type="text" id="name and last" placeholder="MDB-984" pattern=".{8,}" maxlength="7"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                </div>
+                <div class="">
+                    <label for="city">Ciudad de procedencia</label><br>
+                    <input type="city" id="city" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="cell-phone"> Número de celular</label><br>
+                    <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="correo">Correo electronico</label><br>
+                    <input type="email" id="correo" placeholder="ejemplo@gmail.com"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="correo">Ciudad de procedencia</label><br>
+                    <input type="email" id="correo" placeholder="Ej. Bogota"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                </div>
+            </form>
+            <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3 max-sm:mt-3">
+                <button class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
+                <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
             </div>
         </div>
-        <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3">
-            <button class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
-            <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
-        </div>
-    </div>
-
-
     </div>
     <div
-        class="edit h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:mx-16 max-sm:block max-sm:justify-center  max-sm:w-screen">
+        class="edit h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl  max-sm:block max-sm:justify-center max-sm:overflow-y-scroll max-sm:overflow-x-hidden max-sm:w-screen">
         <div class="p-10 max-sm:p-5">
             <div
-                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-1 max-sm:text-center">
+                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-0 max-sm:text-center">
                 <ion-icon name="create"
                     class="ion-title text-black-100 mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
                 <p class="text-cardtitle">Editar Clientes</p>
             </div>
-            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:text-center">
-                <form>
-                    <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
-                        <label for="document">Tipo de Documento</label><br>
-                        <select name="document" id="document" class="mb-8 border bg-transparent dark:border-white">
-                            <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
-                        <br>
-                        <label for="n-document">Número de documento</label><br>
-                        <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxxxxxxxxx"
-                            required class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd">
-                        <br>
-                        <label for="name">Nombres y Apellidos</label><br>
-                        <input type="text" id="name" placeholder="Pepito Perez"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd">
-                        <br>
-                        <label for="name and last">Placas del vehículo</label><br>
-                        <input type="text" id="name and last" placeholder="MDB-984" pattern=".{8,}" maxlength="7"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd">
-                    </div>
-                    <div class="mx-12">
-                        <label for="city">Ciudad de procedencia</label><br>
-                        <input type="city" id="city" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd"><br>
-                        <label for="cell-phone"> Número de celular</label><br>
-                        <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd"><br>
-                        <label for="correo">Correo electronico</label><br>
-                        <input type="email" id="correo" placeholder="ejemplo@gmail.com"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd"><br>
-                        <label for="correo">Ciudad de procedencia</label><br>
-                        <input type="email" id="correo" placeholder="Ej. Bogota"
-                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd"><br>
-                    </div>
-                </form>
-            </div>
-            <div class="flex justify-center gap-6 right-10 absolute bottom-16">
-                <button class="delete-edit-button bg-grayd text-white w-24 h-10 rounded mr-52  ">Desactivar</button>
+            <form class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:items-center max-sm:w-screen">
+                <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
+                    <label for="document">Tipo de Documento</label><br>
+                    <select name="document" id="document" class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                        <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                        <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                    <br>
+                    <label for="n-document">Número de documento</label><br>
+                    <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxxxxxxxxx" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                    <br>
+                    <label for="name">Nombres y Apellidos</label><br>
+                    <input type="text" id="name" placeholder="Pepito Perez"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                    <br>
+                    <label for="name and last">Placas del vehículo</label><br>
+                    <input type="text" id="name and last" placeholder="MDB-984" pattern=".{8,}" maxlength="7"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
+                </div>
+                <div class="">
+                    <label for="city">Ciudad de procedencia</label><br>
+                    <input type="city" id="city" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="cell-phone"> Número de celular</label><br>
+                    <input type="text" id="cell-phone" pattern=".{8,}" maxlength="13" required
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="correo">Correo electronico</label><br>
+                    <input type="email" id="correo" placeholder="ejemplo@gmail.com"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    <label for="correo">Ciudad de procedencia</label><br>
+                    <input type="email" id="correo" placeholder="Ej. Bogota"
+                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                </div>
+            </form>
+            <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 max-sm:mb-3 max-sm:mt-3">
+                <button
+                    class="delete-edit-button bg-grayd text-white w-24 h-10 rounded mr-52 max-sm:mr-4">Desactivar</button>
                 <button class="cancel-edit-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
                 <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
             </div>
-            </form>
-
         </div>
     </div>
     <div class="mx-16 pt-16">
