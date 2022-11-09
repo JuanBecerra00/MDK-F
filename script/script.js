@@ -4,11 +4,32 @@ let submenu = document.querySelector('.header-submenu');
 let profile = document.querySelector('.submenu-profile');
 let settings = document.querySelector('.submenu-settings');
 let exit = document.querySelector('.submenu-exit');
+
+let mobilemoduleusers = document.querySelector('.mobile-module-users');
+let mobilemoduleclients = document.querySelector('.mobile-module-clients');
+let mobilemodulecars = document.querySelector('.mobile-module-cars');
+let mobilemodulebuy = document.querySelector('.mobile-module-buy');
+let mobilemodulestorage = document.querySelector('.mobile-module-storage');
+let mobilemodulesell = document.querySelector('.mobile-module-sell');
+let asidemobile = document.querySelector('.aside-mobile');
+let usermobile = document.querySelector('.user-mobile');
+
+
+let headeruser = document.querySelector('.header-user');
+let headeruserx = document.querySelector('.header-user-x');
+let headeraside = document.querySelector('.header-aside');
+let headerasidex = document.querySelector('.header-aside-x');
 submenubutton.onclick = function () {
     submenubutton.classList.add('active')
     submenu.focus()
     
     usermobile.classList.toggle('max-sm:translate-x-full')
+    asidemobile.classList.add('max-sm:-translate-x-full')
+
+    
+    headeruser.classList.toggle('max-sm:opacity-0')
+    headeruserx.classList.toggle('max-sm:opacity-0')
+    headeruserx.classList.toggle('max-sm:opacity-1')
 }
 submenubuttonlocker.onclick = function () {
     submenubutton.classList.add('active')
@@ -28,10 +49,31 @@ submenu.onblur = function () {
 }
 
 
-let asidemobilebutton = document.querySelector('.aside-mobile-button');
-let asidemobile = document.querySelector('.aside-mobile');
-let usermobile = document.querySelector('.user-mobile');
 
-asidemobilebutton.onclick = function() {
+headeraside.onclick = function() {
     asidemobile.classList.toggle('max-sm:-translate-x-full')
+    usermobile.classList.add('max-sm:translate-x-full')
+
+    
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
+}
+mobilemoduleusers.onclick = function() {
+    asidemobile.classList.add('max-sm:-translate-x-full')
+}
+mobilemoduleclients.onclick = function() {
+    asidemobile.classList.add('max-sm:-translate-x-full')
+}
+mobilemodulecars.onclick = function() {
+    asidemobile.classList.add('max-sm:-translate-x-full')
+}
+mobilemodulebuy.onclick = function() {
+    asidemobile.classList.add('max-sm:-translate-x-full')
+}
+mobilemodulestorage.onclick = function() {
+    asidemobile.classList.add('max-sm:-translate-x-full')
+}
+mobilemodulesell.onclick = function() {
+    asidemobile.classList.add('max-sm:-translate-x-full')
 }

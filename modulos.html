@@ -267,70 +267,216 @@
     </style>
 </head>
 
-<body class="bg-white dark:bg-darkgrayd duration-500">
-    <header class="bg-grayd fixed w-screen flex px-20 place-content-between items-center z-50 overflow-visible h-20">
-        <a href="index.html"><img src="assets/img/logo.svg" alt="X" class="header-logo h-8" tabindex="1"></a>
-        <ul class="header-modules flex text-white items-center text-header gap-5">
-            <li>
-                <a href="" tabindex="1">
-                    <div class="flex align-center rounded-2xl p-1.5 duration-500 hover:bg-redd">
-                        <ion-icon name="help" class="ion-small"></ion-icon>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <div class="flex align-center rounded-2xl p-1.5 p-0 rotate-90 ion-separator">
-                    <ion-icon name="remove-outline" class=""></ion-icon>
-                </div>
-            </li>
-            <li class="submenu-li ">
-                <div class="header-submenu-div relative flex justify-center">
-                    <button
-                        class="header-submenu-button flex align-center p-1.5 duration-500 flex items-center gap-2 border border-grayd rounded hover:border-redd cursor-pointer px-3" tabindex="1">
-                        
-                        <ion-icon name="person" style="font-size: 24px;"></ion-icon>
-                    <div>
-                        <strong>Juan Becerra</strong>
-                        <p>Administrador</p>
-                    </div>
-                    </button>
-                    <button
-                        class="header-submenu-button-locker absolute -ml-2 opacity-0 border-grayd rounded" tabindex="1">
-                    </button>
-                    <div class="header-submenu absolute w-7 h-7 bg-grayd rounded-2xl ease-in-out shadow-custom" tabindex="1">
-                        <div
-                            class="arrowtop absolute w-4 h-4 bg-grayd top-1 rotate-45 rounded-sm duration-500 delay-700 ease-in-out flex">
+<body class="bg-white dark:bg-darkgrayd duration-500 max-sm:h-screen overflow-hidden">
+    <header class="bg-grayd fixed max-sm:static w-screen flex px-20
+            max-sm:px-5 place-content-between items-center z-50 overflow-visible
+            h-20 max-sm:overflow-hidden">
+            <div class="flex align-center rounded-2xl p-1.5 duration-500
+                text-white">
+                
+                    
+                    <ion-icon name="add" class="header-aside-x ion text-white duration-200 ion-module rotate-45 absolute sm:opacity-0 max-sm:opacity-0"></ion-icon>
+                    <ion-icon name="menu" class="header-aside text-[24px]
+                    sm:w-0 sm:invisible sm:h-0"></ion-icon>
+                <a href="index.html"><img src="assets/img/logo.svg" alt="X"
+                        class="header-logo h-8 max-sm:w-0 max-sm:invisible
+                        max-sm:h-0" tabindex="1"></a>
+            </div>
+            <a href="index.html"><img src="assets/img/logo.svg" alt="X"
+                    class="header-logo h-8 sm:w-0 sm:invisible sm:h-0"
+                    tabindex="1"></a>
+            <ul class="header-modules flex text-white items-center text-header">
+                <li class="max-sm:w-0 max-sm:invisible max-sm:h-0">
+                    <a href="" tabindex="1">
+                        <div class="flex align-center rounded-2xl p-1.5
+                            duration-500 hover:bg-redd">
+                            <ion-icon name="help" class="ion-small"></ion-icon>
                         </div>
-                        <ul class="header-submenu-ul flex flex-col m-5">
-                            <li style="--i:0s;" class="submenu-profile opacity-0 invisible duration-500">
-                                <a href="#" class="flex items-center mb-2.5 duration-500" tabindex="1">
-                                    <span class="w-7 mr-2.5 flex justify-center">
+                    </a>
+                </li>
+                <li class="max-sm:w-0 max-sm:invisible max-sm:h-0">
+                    <div class="flex align-center rounded-2xl p-1.5 p-0
+                        rotate-90 ion-separator">
+                        <ion-icon name="remove-outline" class=""></ion-icon>
+                    </div>
+                </li>
+                <li class="submenu-li ">
+                    <div class="header-submenu-div relative flex
+                        justify-center">
+                        <button
+                            class="header-submenu-button flex p-1.5 max-sm:p-0
+                            duration-500 flex items-center gap-2 max-sm:gap-0
+                            border border-grayd rounded sm:hover:border-redd
+                            cursor-pointer px-3" tabindex="1">
+
+                            <ion-icon name="person" style="font-size: 24px;" class="header-user max-sm:opacity-1"></ion-icon>
+                            <ion-icon name="add" class="header-user-x ion text-white duration-200 ion-module rotate-45 absolute sm:opacity-0 max-sm:opacity-0"></ion-icon>
+                            <div class="max-sm:invisible max-sm:w-0">
+                                <strong>Juan Becerra</strong>
+                                <p>Administrador</p>
+                            </div>
+                        </button>
+                        <button
+                            class="header-submenu-button-locker absolute -ml-2
+                            opacity-0 border-grayd rounded" tabindex="1">
+                        </button>
+                        <div class="header-submenu max-sm:invisible absolute w-7
+                            h-7 bg-grayd rounded-2xl ease-in-out shadow-custom "
+                            tabindex="1">
+                            <div
+                                class="arrowtop absolute w-4 h-4 bg-grayd top-1
+                                rotate-45 rounded-sm duration-500 delay-700
+                                ease-in-out flex">
+                            </div>
+                            <ul class="header-submenu-ul flex flex-col m-5">
+                                <li style="--i:0s;" class="submenu-profile
+                                    opacity-0 invisible duration-500">
+                                    <a href="#" class="flex items-center mb-2.5
+                                        duration-500" tabindex="1">
+                                        <span class="w-7 mr-2.5 flex
+                                            justify-center">
+                                            <ion-icon name="person" class="ion"></ion-icon>
+                                        </span> <span for="">Perfil</span>
+                                    </a>
+                                </li>
+                                <li style="--i:0.1s;" class="submenu-settings
+                                    opacity-0 invisible duration-500">
+                                    <a href="#" class=" flex items-center mb-2.5
+                                        duration-500" tabindex="1">
+                                        <span class="w-7 mr-2.5 flex
+                                            justify-center">
+                                            <ion-icon name="cog" class="ion"></ion-icon>
+                                        </span> <span for="">Ajustes</span>
+                                    </a>
+                                </li>
+                                <li style="--i:0.2s;" class="submenu-exit
+                                    opacity-0 invisible duration-500">
+                                    <a href="login.html" class="flex
+                                        items-center mb-2.5 duration-500"
+                                        tabindex="1">
+                                        <span class="w-7 mr-2.5 flex
+                                            justify-center">
+                                            <ion-icon name="exit" class="ion"></ion-icon>
+                                        </span> <span for="">Salir</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ml-2">
+                        </div>
+                    </li>
+                </ul>
+            </header>
+            <div class="sm:w-0 overflow-hidden absolute h-full mb-2">
+
+                <div class="aside-mobile max-sm:h-screen max-sm:w-screen
+                    max-sm:bg-grayd max-sm:-translate-x-full absolute
+                    duration-200">
+                    <ul class="mobile-aside-ul flex flex-col justify-center p-5 text-white gap-5">
+                        <li class="h-12 flex mobile-module-users">
+                            <a href="Usuarios.html" class=""
+                                target="display">
+                                <ion-icon name="person" class="ion text-white
+                                    duration-200 mt-1.5 ion-module"></ion-icon>
+                                    
+                                <label class="aside-label relative bottom-1 ml-5
+                                    duration-300 cursor-pointer">Usuarios</label>
+                            </a>
+                        </li>
+                        <li class="h-12 flex">
+                            <a href="clientes.html" class="mobile-module-clients"
+                                target="display">
+                                <ion-icon name="people" class="ion text-white
+                                    duration-200 mt-1.5 ion-module"></ion-icon>
+                                <label class="aside-label relative bottom-1 ml-5
+                                    duration-300 cursor-pointer">Clientes</label>
+                            </a>
+                        </li>
+                        <li class="h-12 flex">
+                            <a href="vehiculos.html" class="mobile-module-cars"
+                                target="display">
+                                <ion-icon name="car" class="ion text-white
+                                    duration-200 mt-1.5 ion-module"></ion-icon>
+                                <span class="aside-label relative bottom-1 ml-5
+                                    duration-300 cursor-pointer">Vehiculos</span>
+                            </a>
+                        </li>
+                        <li class="h-12 flex">
+                            <a href="Proveedores.html" class="mobile-module-buy"
+                                target="display">
+                                <ion-icon name="cart" class="ion text-white
+                                    duration-200 mt-1.5 ion-module"></ion-icon>
+                                <label class="aside-label relative bottom-1 ml-5
+                                    duration-300 cursor-pointer">Proveedores</label>
+                            </a>
+                        </li>
+                        <li class="h-12 flex">
+                            <a href="insumos.html" class="mobile-module-storage"
+                                target="display">
+                                <ion-icon name="file-tray-full" class="ion
+                                    text-white duration-200 mt-1.5 ion-module"></ion-icon>
+                                <label class="aside-label relative bottom-1 ml-5
+                                    duration-300 cursor-pointer">Insumos</label>
+                            </a>
+                        </li>
+                        <hr class="mobile-aside-separator active w-full">
+                        <li class="h-12 flex">
+                            <a href="facturacion.html" target="display"
+                                class="mobile-module-sell">
+                                <ion-icon name="cash" class="ion text-white
+                                    duration-200 mt-1.5 ion-module ion-money"></ion-icon>
+                                <label class="aside-label relative bottom-1 ml-5
+                                    duration-300 cursor-pointer">Facturacion</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user-mobile max-sm:h-full max-sm:w-screen
+                    max-sm:bg-grayd max-sm:translate-x-full
+                    duration-200">
+                    <ul class="mobile-header-submenu-ul text-white flex flex-col
+                        px-5 pb-[80px] h-[calc(100vh-32px)]
+                        place-content-between">
+                        <div>
+                            <li style="--i:0s;" class="mobile-submenu-profile
+                                items-center
+                                duration-500">
+                                <a href="#" class="flex items-center mb-2.5
+                                    duration-500 h-12" tabindex="1">
+                                    <span class="w-7 mr-2.5 flex
+                                        justify-center">
                                         <ion-icon name="person" class="ion"></ion-icon>
                                     </span> <span for="">Perfil</span>
                                 </a>
                             </li>
-                            <li style="--i:0.1s;" class="submenu-settings opacity-0 invisible duration-500">
-                                <a href="#" class=" flex items-center mb-2.5 duration-500" tabindex="1">
-                                    <span class="w-7 mr-2.5 flex justify-center">
+                            <li style="--i:0.1s;" class="mobile-submenu-settings
+                                items-center
+                                duration-500">
+                                <a href="#" class=" flex items-center mb-2.5
+                                    duration-500 h-12" tabindex="1">
+                                    <span class="w-7 mr-2.5 flex
+                                        justify-center">
                                         <ion-icon name="cog" class="ion"></ion-icon>
                                     </span> <span for="">Ajustes</span>
                                 </a>
                             </li>
-                            <li style="--i:0.2s;" class="submenu-exit opacity-0 invisible duration-500">
-                                <a href="login.html" class="flex items-center mb-2.5 duration-500" tabindex="1">
-                                    <span class="w-7 mr-2.5 flex justify-center">
-                                        <ion-icon name="exit" class="ion"></ion-icon>
-                                    </span> <span for="">Salir</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="ml-2">
-                    </div>
-            </li>
-        </ul>
-    </header>
-    <aside class="aside active -z-20 text-white w-56 absolute p-2 duration-500">
+                        </div>
+                        <li style="--i:0.2s;" class="mobile-submenu-exit
+                            items-center
+                            duration-500">
+                            <a href="login.html" class="flex
+                                items-center duration-500 h-12"
+                                tabindex="1">
+                                <span class="w-7 mr-2.5 flex
+                                    justify-center">
+                                    <ion-icon name="exit" class="ion"></ion-icon>
+                                </span> <span for="">Salir</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    <aside class="max-sm:invisible max-sm:opacity-0 max-sm:w-0 max-sm:h-0 aside active -z-20 text-white w-56 absolute p-2 duration-500">
 
         <div class="menu-toggle absolute">
             <ion-icon name="chevron-forward"
@@ -402,7 +548,7 @@
             </span>
         </section>
     </aside>
-    <iframe src="Usuarios.html" frameborder="0" class="iframe mt-12 active -z-10 absolute right-0 duration-500 bg-transparent"
+    <iframe src="Usuarios.html" frameborder="0" class="iframe sm:mt-12 active -z-10 absolute sm:right-0 duration-500 bg-transparent"
         name="display"></iframe>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -412,9 +558,12 @@
     <script src="script/dark.js"></script>
 
     <footer class="absolute bottom-0 bg-grayd w-full text-white h-8">
-        <ul class="absolute flex gap-5 inset-y-0 right-8">
+        <ul class="absolute flex gap-5 inset-y-0 w-full place-content-between px-12 max-sm:px-5">
+            <li class="sm:invisible sm:opacity-0"><a href="" class="align-middle hover:underline">Ayuda</a></li>
+            <div class="flex gap-5">
             <li><a href="" class="align-middle hover:underline">Empresa</a></li>
             <li><a href="" class="align-middle hover:underline">Creditos</a></li>
+            </div>
         </ul>
     </footer>
 </body>
