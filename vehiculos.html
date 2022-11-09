@@ -171,17 +171,17 @@
 
     <div class="absolute reg-bg h-screen w-screen z-10"></div>
     <div
-        class="reg h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:mx-16 max-sm:block max-sm:justify-center max-sm:w-screen">
+        class="reg h-full w-152 absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl  max-sm:block max-sm:justify-center max-sm:w-screen">
         <div class="p-10 max-sm:p-5">
             <div
-                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-1 max-sm:text-center">
+                class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-0 max-sm:text-center">
                 <ion-icon name="car"
                     class="ion-title text-black-100 mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
                 <p class="text-cardtitle">Registro de Vehiculo</p>
             </div>
-            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:text-center">
-                <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
-                    <form>
+            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:w-screen">
+                <form>
+                    <div class=" mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
                         <label for="n-document">Placa</label><br>
                         <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxxxxxxxxx"
                             required
@@ -190,12 +190,12 @@
                         <label for="name">Modelo</label><br>
                         <input type="text" id="name" placeholder="Camaro"
                             class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                </div>
-                <div class="">
-                    <label for="city">Documento del propietario</label><br>
-                    <input type="text" id="city" required
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                </div>
+                    </div>
+                    <div class="">
+                        <label for="city">Documento del propietario</label><br>
+                        <input type="text" id="city" required
+                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    </div>
                 </form>
             </div>
         </div>
@@ -213,9 +213,10 @@
                     class="ion-title text-black-100 mr-6 dark:text-white max-sm:mr-0 max-sm:text-[4rem]"></ion-icon>
                 <p class="text-cardtitle">Editar Vehiculo</p>
             </div>
-            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4 max-sm:text-center">
-                <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
-                    <form>
+            <div class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-4">
+                <form>
+                    <div class="mb-12 mr-16 max-sm:mr-0 max-sm:mb-0">
+
                         <label for="n-document">Placa</label><br>
                         <input type="text" id="n-document" pattern=".{8,}" maxlength="10" placeholder="xxxxxxxxxx"
                             required
@@ -224,12 +225,12 @@
                         <label for="name">Modelo</label><br>
                         <input type="text" id="name" placeholder="Camaro"
                             class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                </div>
-                <div class="">
-                    <label for="city">Documento del propietario</label><br>
-                    <input type="text" id="city" required
-                        class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
-                </div>
+                    </div>
+                    <div class="">
+                        <label for="city">Documento del propietario</label><br>
+                        <input type="text" id="city" required
+                            class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
+                    </div>
                 </form>
             </div>
         </div>
