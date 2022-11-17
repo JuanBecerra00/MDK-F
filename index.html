@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="shortcut icon" href="assets/img/logo.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/output.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         let x = document.cookie;
@@ -24,80 +23,76 @@
 
 
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-        body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .ion{
-            font-size: 26px;
-        }
-        .ion-small{
-            font-size:20px;
-        }
-        .ion-card{
-            font-size:82px;
-        }
-        .ion-separator{
-            font-size:30px;
-        }
-        .header-submenu{
-            z-index: -1;
-            transition: transform .5s, width .5s, height .5s, padding .5s, border-radius .5s, box-shadow .5s;
-            transition-delay: 1.2s, .7s, .5s, .7s, .7s, .5s;
-            font-size:14px;
-        }
-        .header-submenu.active{
-            width: 120px;
-            height: 140px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.6);;
-            transform: translateY(80px);
-            transition-delay: 0.2s, .5s, .7s, .5s, .5s, .5s;
-        }
-        .arrowtop{
-            left:calc(50% - 8px);
-        }
-        .header-submenu.active .arrowtop{
-            top:-5px;
-        }
-        .header-submenu li{
-            transition-delay:calc(0s + var(--i));
-        }
-        .header-submenu.active li{
-            opacity:1;
-            visibility:visible;
-            transition:.5s;
-            transition-delay:calc(1s + var(--i));
-        }
-        .header-submenu.active a:hover{
-            transition-delay: 0s;
-            transition:.5s;
-            background:#221e1e;
-            color: #b81d28;
-        }
-        .header-submenu-button.active{
-        animation: pop .5s;
-        }
-        @keyframes pop{
-            10% {
-                transform:scale(.9);
-            }
-        }
-        .header-submenu-button-locker{
-            transition: .7s;
-        }
-        .header-submenu-button-locker.active{
-            width: 133px;
-            height: 50px;
-            transition: 0;
-        }
-        .header-submenu-button-locker.active:hover{
-            border: 1px solid #b81d28;
-        }
-        }
-    </style>
     <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+                .ion{
+                    font-size: 26px;
+                }
+                .ion-small{
+                    font-size:20px;
+                }
+                .ion-card{
+                    font-size:82px;
+                }
+                .ion-separator{
+                    font-size:30px;
+                }
+                .header-submenu{
+                    z-index: -1;
+                    transition: transform .5s, width .5s, height .5s, padding .5s, border-radius .5s, box-shadow .5s;
+                    transition-delay: 1.2s, .7s, .5s, .7s, .7s, .5s;
+                    font-size:14px;
+                }
+                .header-submenu.active{
+                    width: 120px;
+                    height: 140px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.6);;
+                    transform: translateY(80px);
+                    transition-delay: 0.2s, .5s, .7s, .5s, .5s, .5s;
+                }
+                .arrowtop{
+                    left:calc(50% - 8px);
+                }
+                .header-submenu.active .arrowtop{
+                    top:-5px;
+                }
+                .header-submenu li{
+                    transition-delay:calc(0s + var(--i));
+                }
+                .header-submenu.active li{
+                    opacity:1;
+                    visibility:visible;
+                    transition:.5s;
+                    transition-delay:calc(1s + var(--i));
+                }
+                .header-submenu.active a:hover{
+                    transition-delay: 0s;
+                    transition:.5s;
+                    background:#221e1e;
+                    color: #b81d28;
+                }
+                .header-submenu-button.active{
+                animation: pop .5s;
+                }
+                @keyframes pop{
+                    10% {
+                        transform:scale(.9);
+                    }
+                }
+                .header-submenu-button-locker{
+                    transition: .7s;
+                }
+                .header-submenu-button-locker.active{
+                    width: 133px;
+                    height: 50px;
+                    transition: 0;
+                }
+                .header-submenu-button-locker.active:hover{
+                    border: 1px solid #b81d28;
+                }
         .images {
             animation: pass 20s infinite;
         }
