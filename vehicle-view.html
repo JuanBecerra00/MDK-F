@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/output.css" rel="stylesheet">
+    <script>
+        let html = document.querySelector('html');
+        let x = document.cookie;
+
+        window.onload = function () {
+            if (x == "dark") {
+                html.classList.add('dark')
+
+            } else {
+                html.classList.remove('dark')
+            }
+        };
+
+
+    </script>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow:hidden;
+        }
+            .ion-title{
+                color:black;
+                font-size:65px;
+            }
+            .ion-submenu{
+                font-size:20px;
+            }
+            .ion-medium{
+                font-size:30px;
+            }
+            .text-title{
+                font-size:60px;
+            }
+            .text-cardtitle{
+                font-size:40px;
+            }
+            .text-subtitle{
+                font-size:40px;
+            }
+            .list-submenu{
+                font-size:16px;
+            }
+            .most-used{
+                font-size:26px
+            }
+            .reg{
+                transition:.5s;
+                transform:translatex(100%);
+    box-shadow:0 3px 10px rgba(0, 0, 0, 0.6);
+            }
+            .reg.active{
+                transition:.5s;
+                transform:translatex(0%);
+            }
+            .edit{
+                transition:.5s;
+                transform:translatex(100%);
+    box-shadow:0 3px 10px rgba(0, 0, 0, 0.6);
+            }
+            .edit.active{
+                transition:.5s;
+                transform:translatex(0%);
+            }
+            .reg-bg{
+                transition:backdrop-filter .5s, transform 0s;
+                transition-delay:0s, .5s;
+                transform:translateX(100%);
+    background: rgba(0, 0, 0, 0);
+            }
+            .reg-bg.active{
+                transition:.5s;
+    backdrop-filter: blur(5px);
+                transform:translatex(0%);
+                transition:backdrop-filter .5s, transform 0s;
+            }
+            .deleted{
+                transform: translateX(90%);
+            }
+    </style>
+</head>
+<body>
+    
+    <div class="mx-16 pt-16">
+        <div class="">
+            <div class="text-7xl text-black-100 flex items-center">
+                <ion-icon name="car" class="ion-title text-black-100 mr-12 dark:text-white"></ion-icon>
+                <p class="text-title">XGD-545</p>
+            </div>
+        </div>
+
+
+        <div class="stable flex justify-center">
+            <div class="mt-8 h-160 flex">
+                <div>
+                    Datos
+                    <div class="p-3 shadow-xl rounded-xl bg-white dark:bg-darkgrayl">
+                        <div class="flex gap-2">
+                            <button type="button"
+                                class="reg-button flex justify-center items-center w-28 h-12 bg-redd text-white w-20 h-10 rounded hover:shadow-list duration-200 mb-2 focus:bg-l dark:bg-darkredd">
+                                <ion-icon name="add" class="ion-submenu mr-2"></ion-icon>
+                                <p>Añadir</p>
+                            </button>
+                            <button type="button"
+                                class="edit-button flex justify-center items-center w-28 h-12 bg-grayd text-gray-500 w-20 h-10 rounded  duration-200 mb-2 focus:bg-l"
+                                disabled>
+                                <ion-icon name="create-outline" class="ion-submenu mr-2"></ion-icon>
+                                <p>Editar</p>
+                            </button>
+                        </div>
+                        <div class="flex gap-2">
+                            <button type="button"
+                                class="export-button reg-button flex justify-center items-center w-28 h-12 bg-redd dark:bg-darkredd text-white w-20 h-10 rounded hover:shadow-list duration-200 focus:bg-l">
+                                <ion-icon name="download-outline" class="ion-submenu mr-2"></ion-icon>
+                                <p>Exportar</p>
+                            </button>
+                            <a href="usuarios-del.html" target="display">
+                                <button type="button"
+                                    class="reg-button flex justify-center items-center w-28 h-12 bg-redd dark:bg-darkredd text-white w-20 h-10 rounded hover:shadow-list duration-200 focus:bg-l">
+                                    <ion-icon name="trash-outline" class="ion-submenu mr-2"></ion-icon>
+                                    <p>Ocultos</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <div
+                            class="export-formats shadow-xl z- dark:bg-darkgrayl rounded-xl h-0 w-full mt-2 top-20 duration-500 flex justify-center items-center overflow-hidden gap-3 dark:bg-darkgrayl">
+                            <button
+                                class="bg-blue-900 text-white w-16 h-10  hover:shadow-list rounded flex justify-center items-center duration-500">
+                                <ion-icon name="document-text"></ion-icon>
+                            </button>
+                            <button
+                                class="bg-red-800 text-white w-16 h-10  hover:shadow-list rounded flex justify-center items-center duration-500">
+                                <ion-icon name="print"></ion-icon>
+                            </button>
+                            <button
+                                class="bg-green-900 text-white w-16 h-10 hover:shadow-list rounded flex justify-center items-center duration-500">
+                                <ion-icon name="stats-chart"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Adjuntar</p>
+                    <div
+                        class="most-used-container p-2 shadow-xl rounded-3xl h-123.2 mt-2 bg-white dark:bg-darkgrayl duration-500">
+                        <div class="flex justify-center mt-3">
+                            <table class="overflow-y-scroll h-custom">
+                                <thead>
+                                    <tr class="flex gap-2">
+                                        <th class="w-12 h-10 border-redd border-b flex justify-center items-center">
+                                            ID</th>
+                                        <th class="w-20 h-10 border-redd border-b flex justify-center items-center">
+                                            Placa</th>
+                                        <th class="w-20 h-10 border-redd border-b flex justify-center items-center">
+                                            Propietario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="flex border-b gap-2">
+                                        <td class="w-12 h-12 rounded flex justify-center items-center text-xl">1</td>
+                                        <td class="w-20 h-12 rounded flex justify-center items-center text-xl">ABC-123
+                                        </td>
+                                        <td class="w-20 h-12 rounded flex justify-center items-center text-xl">Valentina
+                                            Leon</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-7 shadow-xl ml-5 rounded-3xl bg-white dark:bg-darkgrayl">
+                    <form action="" class="search-form h-10 flex w-full justify-end items-center mb-3 pr-5">
+                        <input type="search"
+                            class="w-40 h-5 border border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl"
+                            id="listsearch" placeholder=" ">
+                        <label for="listsearch" class="lbl-search mr-3 flex items-center duration-500 absolute">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </label>
+                    </form>
+                    <table class="overflow-y-scroll h-custom">
+                        <thead>
+                            <tr class="flex gap-20">
+                                <th class="list-select-all flex justify-center items-center mr-5 duration-500">
+                                    <ion-icon name="caret-down"
+                                        class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
+                                    </ion-icon>
+                                </th>
+                                <th
+                                    class="w-16 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    ID</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Placa</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Propietario</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Modelo</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="flex border-b gap-20" tabindex="1">
+                                <a href="">
+                                    <td class="flex justify-center items-center mr-5">
+                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                            onclick="checkchecks()">
+                                    </td>
+                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ABC-123
+                                    </td>
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">
+                                        Valentina Leon</td>
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Shelby
+                                        GT500</td>
+                                    </td>
+                                </a>
+                            </tr>
+                            <tr class="flex border-b gap-20" tabindex="1">
+                                <td class="flex justify-center items-center mr-5">
+                                    <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                        onclick="checkchecks()">
+                                </td>
+                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ABC-123
+                                </td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina
+                                    Leon</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Shelby GT500
+                                </td>
+                                </td>
+                            </tr>
+                            <tr class="flex border-b gap-20" tabindex="1">
+                                <td class="flex justify-center items-center mr-5">
+                                    <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                        onclick="checkchecks()">
+                                </td>
+                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ABC-123
+                                </td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina
+                                    Leon</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Shelby GT500
+                                </td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

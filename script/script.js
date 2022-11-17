@@ -61,19 +61,37 @@ headeraside.onclick = function() {
 }
 mobilemoduleusers.onclick = function() {
     asidemobile.classList.add('max-sm:-translate-x-full')
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
 }
 mobilemoduleclients.onclick = function() {
     asidemobile.classList.add('max-sm:-translate-x-full')
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
 }
 mobilemodulecars.onclick = function() {
     asidemobile.classList.add('max-sm:-translate-x-full')
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
 }
 mobilemodulebuy.onclick = function() {
     asidemobile.classList.add('max-sm:-translate-x-full')
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
 }
 mobilemodulestorage.onclick = function() {
     asidemobile.classList.add('max-sm:-translate-x-full')
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
 }
 mobilemodulesell.onclick = function() {
     asidemobile.classList.add('max-sm:-translate-x-full')
+    headeraside.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-0')
+    headerasidex.classList.toggle('max-sm:opacity-1')
 }
