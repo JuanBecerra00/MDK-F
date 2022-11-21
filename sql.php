@@ -1,7 +1,7 @@
 <?php
 $server = "localhost";
 $user = "root";
-$password = "Juan74334274";
+$password = "";
 $conexion = new mysqli($server, $user, $password);
 if($conexion ->connect_error){
     die("Conexion fallida: " . $conexion->connect_error);

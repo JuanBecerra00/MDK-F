@@ -409,7 +409,7 @@
         </div>
         <ul class="aside-ul mt-20 p-3">
             <li class="h-6 flex mb-14">
-                <a href="Usuarios.html" class="module-users select" target="display">
+                <a href="Usuarios.php" class="module-users select" target="display">
                     <ion-icon name="person" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Usuarios</label>
                 </a>
@@ -456,7 +456,7 @@
             </span>
         </div>
     </aside>
-    <iframe src="Usuarios.html" frameborder="0"
+    <iframe src="Usuarios.php" frameborder="0"
         class="iframe max-sm:h-[calc(100vh-165px)]
         max-sm:h-[calc(100vh-165px)] max-sm:w-screen sm:mt-12 active sm:-z-10 absolute sm:right-0 duration-500 bg-transparent" name="display"></iframe>
 
@@ -567,7 +567,7 @@
     <script src="script/script.js"></script>
     <script src="script/dark.js"></script>
 
-    <footer class="absolute bottom-0 bg-grayd w-full text-white h-8">
+    <footer class="max-sm:invisible absolute bottom-0 bg-grayd w-full text-white h-8">
         <ul class="absolute flex gap-5 inset-y-0 w-full place-content-between px-12 max-sm:px-5">
             <li class="sm:invisible sm:opacity-0"><a href="" class="align-middle hover:underline">Ayuda</a></li>
             <div class="flex gap-5">

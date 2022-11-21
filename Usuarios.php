@@ -171,55 +171,68 @@
                 </ion-icon>
                 <p class="text-subtitle">Registro de usuarios</p>
             </div>
-            <form class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-8 max-sm:text-center">
+            <form method="post" action="Usuarios.php" class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-8 max-sm:text-center">
                 <div class="mb-12 mr-16 max-sm:mr-1 max-sm:mb-1">
                     <label for="document" class="">Tipo de Documento</label><br>
-                    <select name="document" id="document"
-                        class="mb-8 border-solid border border-black bg-transparent dark:border-white">
-                        <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                        <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                        <option value="Pasaporte">Pasaporte</option>
+                    <select name="reg_id_type" id="document"
+                            class="mb-8 border-solid border border-black bg-transparent dark:border-white">
+                        <option value="CC">Cedula de Ciudadania</option>
+                        <option value="TI">Tarjeta de Identidad</option>
+                        <option value="CE">Cedula de Extranjeria</option>
+                        <option value="PA">Pasaporte</option>
                     </select>
                     <br>
                     <label for="n-document">Numero de documento</label><br>
-                    <input type="text" id="n-document" placeholder="xxxxxxxxxx" required
+                    <input type="text" id="n-document" placeholder="xxxxxxxxxx"  name="reg_id_number"
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd ">
                     <br>
                     <label for="name and last">Nombres y Apellidos</label><br>
-                    <input type="text" id="name and last" placeholder="Pepito Perez"
+                    <input type="text" id="name and last" placeholder="Pepito Perez" name="reg_nombre"
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd ">
                     <br>
                     <label for="Cargo">Cargo</label><br>
-                    <select name="Cargo" id="Cargo"
+                    <select name="reg_job" id="Cargo" name="reg_job"
                         class="mb-8 bg-transparent border-solid border border-black dark:border-white">
-                        <option value="Administrador">Administrador</option>
-                        <option value="Administrador">Trabajador</option>
-                        <option value="Mecánico">Mecánico</option>
+                        <option value="A">Administrador</option>
+                        <option value="T">Trabajador</option>
+                        <option value="M">Mecánico</option>
                     </select>
+                    <br>
+                    <label for="phone">Telefono</label><br>
+                    <input type="text" id="phone" placeholder="Pepito Perez" name="reg_phone"
+                           class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd ">
+                    <br>
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" placeholder="Pepito Perez" name="reg_email"
+                           class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd ">
+                    <br>
                 </div>
                 <div>
                     <label for="password">Contraseña</label><br>
-                    <input type="password" id="password" pattern=".{8,}" maxlength="15" required
+                    <input type="password" id="password" pattern=".{8,}" maxlength="15"  name="reg_password"
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd "><br>
                     <label for="con-password"> Confirmar Contraseña</label><br>
-                    <input type="password" id="con-password" pattern=".{8,}" maxlength="15" required
+                    <input type="password" id="con-password" pattern=".{8,}" maxlength="15"  name="reg_password2"
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd "><br>
                     <label for="question">Pregunta clave</label><br>
-                    <input type="text" id="question"
+                    <input type="text" id="question" name="reg_question"
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd "><br>
                     <label for="answer">Respuesta</label><br>
-                    <input type="text" id="answer"
+                    <input type="text" id="answer" name="reg_answer"
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd "><br>
                 </div>
-            </form>
         </div>
 
+        
+
         <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:mb-5">
-            <button class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
-            <button class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
+            <button type="reset" class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
+            <button type="submit" class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
         </div>
     </div>
+    </form>
+
+    
     <div class="edit h-full max-sm:h-screen sm:w-152 max-sm:w-screen absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:overflow-y-scroll">
         <div class="p-10">
             <div class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-12 max-sm:text-center">
@@ -229,12 +242,12 @@
             <form class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-8 max-sm:text-center">
                 <div class="mb-12 mx-8 max-sm:mx-2 max-sm:mb-0">
                     <label for="document">Tipo de Documento</label><br>
-                    <select name="document" id="document"
+                    <select name="edit_id_type" id="document"
                         class="mb-8 border-solid border border-black bg-transparent dark:border-white">
-                        <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                        <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="CC">Cedula de Ciudadania</option>
+                        <option value="TI">Tarjeta de Identidad</option>
+                        <option value="CE">Cedula de Extranjeria</option>
+                        <option value="PA">Pasaporte</option>
                     </select>
                     <br>
                     <label for="n-document">Numero de documento</label><br>
@@ -246,12 +259,22 @@
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd">
                     <br>
                     <label for="Cargo">Cargo</label><br>
-                    <select name="Cargo" id="Cargo"
+                    <select name="edit_job" id="Cargo"
                         class="mb-8 bg-transparent border-solid border border-black dark:border-white">
-                        <option value="Administrador">Administrador</option>
-                        <option value="Administrador">Trabajador</option>
-                        <option value="Mecánico">Mecánico</option>
+                        <option value="A">Administrador</option>
+                        <option value="T">Trabajador</option>
+                        <option value="M">Mecánico</option>
                     </select>
+
+                    <br>
+                    <label for="phone">Telefono</label><br>
+                    <input type="text" id="phone" placeholder="Pepito Perez" name="reg_phone"
+                           class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd ">
+                    <br>
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" placeholder="Pepito Perez" name="reg_email"
+                           class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd ">
+                    <br>
                 </div>
                 <div class="">
                     <label for="password">Contraseña</label><br>
@@ -308,9 +331,9 @@
                                 <ion-icon name="search-outline"></ion-icon>
                             </label>
                         </form>
-                        <table class="overflow-y-scroll h-custom">
+                        <!-----><table class="overflow-y-scroll h-custom">
                             <thead>
-                                <tr class="flex sm:gap-20">
+                                <tr class="flex sm:gap-15">
                                     <th class="list-select-all flex justify-center items-center mr-5 duration-500">
                                         <ion-icon name="caret-down"
                                             class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
@@ -326,47 +349,90 @@
                                         class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
                                         Telefono</th>
                                     <th
+                                            class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Correo</th>
+                                    <th
                                         class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
                                         Cargo</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="flex border-b sm:gap-20" tabindex="1">
+                            <?php
+                            $server = "localhost";
+                            $user = "root";
+                            $password = "";
+                            $db = "mdk";
+                            $conexion = new mysqli($server, $user, $password, $db);
+                            if($conexion ->connect_error){
+                                die("Conexion fallida: " . $conexion->connect_error);
+                            }
+
+                            if (isset($_POST['reg_nombre'])){
+                                $reg_id_type = $_POST['reg_id_type'];
+                                $reg_id_number = $_POST['reg_id_number'];
+                                $reg_job = $_POST['reg_job'];
+                                $reg_nombre = $_POST['reg_nombre'];
+                                $reg_phone = $_POST['reg_phone'];
+                                $reg_password = $_POST['reg_password'];
+                                $reg_question = $_POST['reg_question'];
+                                $reg_answer = $_POST['reg_answer'];
+                                $reg_email = $_POST['reg_email'];
+                                $sql = "Select * from users";
+                                $resultado = $conexion->query($sql);
+                                $db_datacant = $resultado->num_rows;
+                                $cant = $db_datacant+1;
+                                $sql = "INSERT INTO users(id, name, phone, job, id_type, id_number, password, question, answer, email, status)
+VALUES('$cant', '$reg_nombre', '$reg_phone', '$reg_job', '$reg_id_type', '$reg_id_number', '$reg_password', '$reg_question', '$reg_answer', '$reg_email', 0 )";
+
+                                if ($reg_job=='A'){
+                                    $cargo='Admin';
+                                }elseif ($reg_job=='T'){
+                                    $cargo='Trabajador';
+                                }elseif ($reg_job=='M'){
+                                    $cargo='Mecanico';
+                                }
+                                if ($conexion->query($sql) === true){
+                                    
+                                }else{
+                                    die("Error al insertar los datos: ".$conexion->error);
+                                }
+                            }
+                            $sql = "Select * from users";
+                            $resultado = $conexion->query($sql);
+
+                            if ($resultado->num_rows > 0){
+                                while ($row = $resultado->fetch_assoc()){
+                                    if ($row['job']=='A'){
+                                        $db_cargo='Admin';
+                                    }elseif ($row['job']=='T'){
+                                        $db_cargo='Trabajador';
+                                    }elseif ($row['job']=='M'){
+                                        $db_cargo='Mecanico';
+                                    }
+                                    if ($row['status']=='0'){
+                                        echo '<tr class="flex border-b sm:gap-15" tabindex="1">
                                     <td class="flex justify-center items-center mr-5">
                                         <input type="checkbox" class="listcheck dark:accent-darkredd"
                                             onclick="checkchecks()">
                                     </td>
-                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Juan Becerra
+                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['id'].'</td>
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['name'].'
                                     </td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">3125433587</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Admin</td>
-                                    </td>
-                                </tr>
-                                <tr class="flex border-b sm:gap-20" tabindex="1">
-                                    <td class="flex justify-center items-center mr-5">
-                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                            onclick="checkchecks()">
-                                    </td>
-                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">2</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Kevin Lopez
-                                    </td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">3103574569</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Admin</td>
-                                    </td>
-                                </tr>
-                                <tr class="flex border-b sm:gap-20" tabindex="1">
-                                    <td class="flex justify-center items-center mr-5">
-                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                            onclick="checkchecks()">
-                                    </td>
-                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">3</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Eimer Cortés
-                                    </td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">3154689745</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Admin</td>
-                                    </td>
-                                </tr>
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['phone'].'</td>
+                                    
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['email'].'</td>
+                                    
+                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$db_cargo.' </td>
+                                    <td><ion-icon name="create" class="edit_db flex justify-center items-center h-12 w-5 textslate-500 hover:text-redd duration-200"></ion-icon></td>
+                                </tr>';
+                                    }
+                                }
+                            }
+                            $conexion->close();
+                            ?>
+                                
+                                
+
                             </tbody>
                         </table>
                     </div>
