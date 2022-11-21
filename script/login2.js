@@ -78,6 +78,7 @@ recoveridinput.onclick = function () {
 }
 
 recovercontinue.onclick = function () {
+    event.preventDefault();
     if (recoveridinput.validity.valid == true) {
         cards.classList.remove('step-1')
         cards.classList.remove('step-2')

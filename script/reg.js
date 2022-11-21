@@ -9,6 +9,7 @@ let editbutton = document.querySelector('.edit-button');
 let exportbutton = document.querySelector('.export-button');
 let exportformats = document.querySelector('.export-formats');
 let mostusedcontainer = document.querySelector('.most-used-container');
+let userstable = document.querySelector('.users-table');
 
 let checks = document.querySelectorAll(".listcheck");
 
@@ -101,5 +102,7 @@ function checkchecks(){
 exportbutton.onclick = function () {
     exportformats.classList.toggle('active')
     mostusedcontainer.classList.toggle('active')
+    userstable.classList.toggle('max-sm:h-[40vh]')
+    userstable.classList.toggle('max-sm:h-[50vh]')
 }
 

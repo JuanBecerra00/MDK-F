@@ -135,13 +135,15 @@
             left: 0;
         }
 
-        .iframe {
+        @media not all and (max-width: 640px) {
+            .iframe {
             width: calc(100% - 300px);
             height: calc(100% - 70px);
         }
 
         .iframe.active {
             width: calc(100% - 140px);
+        }
         }
 
         aside .ion {
@@ -379,120 +381,7 @@
             </li>
         </ul>
     </header>
-    <div class="sm:w-0 overflow-hidden absolute h-full mb-2">
-
-        <div class="aside-mobile max-sm:h-screen max-sm:w-screen
-                    max-sm:bg-grayd max-sm:-translate-x-full absolute
-                    duration-200 p-5 flex flex-col place-content-between">
-            <ul class="mobile-aside-ul flex flex-col justify-center text-white gap-5">
-                <a href="Usuarios.html" class="mobile-module-users flex items-center" target="display">
-                    <li class="h-12 flex items-center">
-                        <ion-icon name="person" class="ion text-white
-                                        duration-200 ion-module"></ion-icon>
-
-                        <label class="aside-label relative ml-5
-                                        duration-300 cursor-pointer">Usuarios</label>
-                    </li>
-                </a>
-
-
-                <a href="clientes.html" class="mobile-module-clients" target="display">
-                    <li class="h-12 flex items-center">
-                        <ion-icon name="people" class="ion text-white
-                                    duration-200 ion-module"></ion-icon>
-                        <label class="aside-label relative ml-5
-                                    duration-300 cursor-pointer">Clientes</label>
-                    </li>
-                </a>
-                <a href="vehiculos.html" class="mobile-module-cars" target="display">
-                    <li class="h-12 flex items-center">
-                        <ion-icon name="car" class="ion text-white
-                                duration-200 ion-module"></ion-icon>
-                        <span class="aside-label relative ml-5
-                                duration-300 cursor-pointer">Vehiculos</span>
-                    </li>
-
-                </a>
-                <a href="proveedores.html" class="mobile-module-buy" target="display">
-                    <li class="h-12 flex items-center">
-                        <ion-icon name="cart" class="ion text-white
-                                    duration-200 ion-module"></ion-icon>
-                        <label class="aside-label relative ml-5
-                                    duration-300 cursor-pointer">Proveedores</label>
-                    </li>
-                </a>
-                <a href="insumos.html" class="mobile-module-storage" target="display">
-                    <li class="h-12 flex items-center">
-                        <ion-icon name="file-tray-full" class="ion
-                                    text-white duration-200 ion-module"></ion-icon>
-                        <label class="aside-label relative ml-5
-                                    duration-300 cursor-pointer">Insumos</label>
-                    </li>
-                </a>
-                <hr class="mobile-aside-separator active w-full">
-                <a href="facturacion.html" target="display" class="mobile-module-sell">
-                    <li class="h-12 flex items-center">
-                        <ion-icon name="cash" class="ion text-white
-                                    duration-200 ion-module ion-money"></ion-icon>
-                        <label class="aside-label relative ml-5
-                                    duration-300 cursor-pointer">Facturacion</label>
-                    </li>
-                </a>
-                
-            </ul>
-            <div class="h-12 flex theme items-center text-white mb-28">
-                <ion-icon name="moon" class=" moon ion opacity-0 dark:opacity-100"></ion-icon>
-                <ion-icon name="sunny-outline"
-                    class=" sun ion absolute left-5 duration-200 opacity-100 rotate-180 dark:opacity-0 dark:-rotate-180">
-                </ion-icon>
-                <label class="aside-label relative ml-5
-                                duration-300 cursor-pointer">Tema</label>
-            </div>
-        </div>
-        <div class="user-mobile max-sm:h-full max-sm:w-screen
-                    max-sm:bg-grayd max-sm:translate-x-full
-                    duration-200">
-            <ul class="mobile-header-submenu-ul text-white flex flex-col
-                        px-5 pb-[80px] h-[calc(100vh-32px)]
-                        place-content-between">
-                <div>
-                    <li style="--i:0s;" class="mobile-submenu-profile
-                                items-center
-                                duration-500">
-                        <a href="#" class="flex items-center mb-2.5
-                                    duration-500 h-12" tabindex="1">
-                            <span class="w-7 mr-2.5 flex
-                                        justify-center">
-                                <ion-icon name="person" class="ion"></ion-icon>
-                            </span> <span for="">Perfil</span>
-                        </a>
-                    </li>
-                    <li style="--i:0.1s;" class="mobile-submenu-settings
-                                items-center
-                                duration-500">
-                        <a href="#" class=" flex items-center mb-2.5
-                                    duration-500 h-12" tabindex="1">
-                            <span class="w-7 mr-2.5 flex
-                                        justify-center">
-                                <ion-icon name="cog" class="ion"></ion-icon>
-                            </span> <span for="">Ajustes</span>
-                        </a>
-                    </li>
-                </div>
-                <li style="--i:0.2s;" class="mobile-submenu-exit
-                            items-center
-                            duration-500">
-                    <a href="login.html" class="flex
-                                items-center duration-500 h-12" tabindex="1">
-                        <span class="w-7 mr-2.5 flex
-                                    justify-center">
-                            <ion-icon name="exit" class="ion"></ion-icon>
-                        </span> <span for="">Salir</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    
     <aside
         class="max-sm:invisible max-sm:opacity-0 max-sm:w-0 max-sm:h-0 aside active -z-20 text-white w-56 absolute p-2 duration-500">
 
@@ -557,7 +446,7 @@
                 </a>
             </li>
         </ul>
-        <section
+        <div
             class="theme  cursor-pointer -ml-2 bg-grayd w-themew h-themew rounded-xl flex justify-center items-center dark:bg-darkredd">
             <span href="#" class="flex items-center justify-center duration-200">
                 <ion-icon name="moon" class="moon ion opacity-0 dark:opacity-100"></ion-icon>
@@ -565,10 +454,113 @@
                     class="sun ion absolute duration-200 opacity-100 rotate-180 dark:opacity-0 dark:-rotate-180">
                 </ion-icon>
             </span>
-        </section>
+        </div>
     </aside>
     <iframe src="Usuarios.html" frameborder="0"
-        class="iframe sm:mt-12 active -z-10 absolute sm:right-0 duration-500 bg-transparent" name="display"></iframe>
+        class="iframe max-sm:h-[calc(100vh-165px)]
+        max-sm:h-[calc(100vh-165px)] max-sm:w-screen sm:mt-12 active sm:-z-10 absolute sm:right-0 duration-500 bg-transparent" name="display"></iframe>
+
+
+        <div class="aside-mobile max-sm:h-[calc(100vh-165px)] max-sm:w-screen
+                    max-sm:bg-grayd max-sm:-translate-x-full absolute
+                    duration-200 p-5 flex flex-col place-content-between sm:translate-y-[1000%]">
+            <ul class="mobile-aside-ul flex flex-col justify-center text-white gap-5">
+                <a href="Usuarios.html" class="mobile-module-users flex items-center" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="person" class="ion text-white
+                                        duration-200 ion-module"></ion-icon>
+
+                        <label class="aside-label relative ml-5
+                                        duration-300 cursor-pointer">Usuarios</label>
+                    </li>
+                </a>
+
+
+                <a href="clientes.html" class="mobile-module-clients" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="people" class="ion text-white
+                                    duration-200 ion-module"></ion-icon>
+                        <label class="aside-label relative ml-5
+                                    duration-300 cursor-pointer">Clientes</label>
+                    </li>
+                </a>
+                <a href="vehiculos.html" class="mobile-module-cars" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="car" class="ion text-white
+                                duration-200 ion-module"></ion-icon>
+                        <span class="aside-label relative ml-5
+                                duration-300 cursor-pointer">Vehiculos</span>
+                    </li>
+
+                </a>
+                <a href="proveedores.html" class="mobile-module-buy" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="cart" class="ion text-white
+                                    duration-200 ion-module"></ion-icon>
+                        <label class="aside-label relative ml-5
+                                    duration-300 cursor-pointer">Proveedores</label>
+                    </li>
+                </a>
+                <a href="insumos.html" class="mobile-module-storage" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="file-tray-full" class="ion
+                                    text-white duration-200 ion-module"></ion-icon>
+                        <label class="aside-label relative ml-5
+                                    duration-300 cursor-pointer">Insumos</label>
+                    </li>
+                </a>
+                <hr class="mobile-aside-separator active w-full">
+                <a href="facturacion.html" target="display" class="mobile-module-sell">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="cash" class="ion text-white
+                                    duration-200 ion-module ion-money"></ion-icon>
+                        <label class="aside-label relative ml-5
+                                    duration-300 cursor-pointer">Facturacion</label>
+                    </li>
+                </a>
+                
+            </ul>
+            <div class="h-12 flex theme items-center text-white mb-0">
+                <ion-icon name="moon" class=" moon ion opacity-0 dark:opacity-100"></ion-icon>
+                <ion-icon name="sunny-outline"
+                    class=" sun ion absolute left-5 duration-200 opacity-100 rotate-180 dark:opacity-0 dark:-rotate-180">
+                </ion-icon>
+                <label class="aside-label relative ml-5
+                                duration-300 cursor-pointer">Tema</label>
+            </div>
+        </div>
+        <div class="user-mobile max-sm:h-[calc(100vh-165px)] max-sm:w-screen
+                    max-sm:bg-grayd max-sm:translate-x-full absolute
+                    duration-200 p-5 flex flex-col place-content-between sm:translate-y-[1000%]">
+            <ul class="mobile-aside-ul flex flex-col justify-center text-white gap-5">
+                <a href="Usuarios.html" class="mobile-module-users flex items-center" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="person" class="ion text-white
+                                        duration-200 ion-module"></ion-icon>
+
+                        <label class="aside-label relative ml-5
+                                        duration-300 cursor-pointer">Perfil</label>
+                    </li>
+                </a>
+
+
+                <a href="clientes.html" class="mobile-module-clients" target="display">
+                    <li class="h-12 flex items-center">
+                        <ion-icon name="cog-outline" class="ion text-white
+                                    duration-200 ion-module"></ion-icon>
+                        <label class="aside-label relative ml-5
+                                    duration-300 cursor-pointer">Ajustes</label>
+                    </li>
+                </a>
+                
+            </ul>
+            <div class="h-12 flex items-center text-white mb-0">
+                <ion-icon name="log-out" class="ion"></ion-icon>
+                
+                <label class="aside-label relative ml-5
+                                duration-300 cursor-pointer">Salir</label>
+            </div>
+        </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="aside.js"></script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,112 +23,120 @@
 
     </script>
     <style>
-        body{
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow:hidden;
+            overflow: scroll;
         }
-            .ion-title{
-                color:black;
-                font-size:65px;
-            }
-            .ion-submenu{
-                font-size:20px;
-            }
-            .ion-medium{
-                font-size:30px;
-            }
-            .text-title{
-                font-size:60px;
-            }
-            .text-cardtitle{
-                font-size:40px;
-            }
-            .text-subtitle{
-                font-size:40px;
-            }
-            .list-submenu{
-                font-size:16px;
-            }
-            .most-used{
-                font-size:26px
-            }
-            .reg{
-                transition:.5s;
-                transform:translatex(100%);
-    box-shadow:0 3px 10px rgba(0, 0, 0, 0.6);
-            }
-            .reg.active{
-                transition:.5s;
-                transform:translatex(0%);
-            }
-            .edit{
-                transition:.5s;
-                transform:translatex(100%);
-    box-shadow:0 3px 10px rgba(0, 0, 0, 0.6);
-            }
-            .edit.active{
-                transition:.5s;
-                transform:translatex(0%);
-            }
-            .reg-bg{
-                transition:backdrop-filter .5s, transform 0s;
-                transition-delay:0s, .5s;
-                transform:translateX(100%);
-    background: rgba(0, 0, 0, 0);
-            }
-            .reg-bg.active{
-                transition:.5s;
-    backdrop-filter: blur(5px);
-                transform:translatex(0%);
-                transition:backdrop-filter .5s, transform 0s;
-            }
-            .deleted{
-                transform: translateX(90%);
-            }
+
+        .ion-title {
+            color: black;
+            font-size: 65px;
+        }
+
+        .ion-submenu {
+            font-size: 20px;
+        }
+
+        .ion-medium {
+            font-size: 30px;
+        }
+
+        .text-title {
+            font-size: 60px;
+        }
+
+        .text-cardtitle {
+            font-size: 40px;
+        }
+
+        .text-subtitle {
+            font-size: 40px;
+        }
+
+        .list-submenu {
+            font-size: 16px;
+        }
+
+        .most-used {
+            font-size: 26px
+        }
+
+        .reg {
+            transition: .5s;
+            transform: translatex(100%);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .reg.active {
+            transition: .5s;
+            transform: translatex(0%);
+        }
+
+        .edit {
+            transition: .5s;
+            transform: translatex(100%);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .edit.active {
+            transition: .5s;
+            transform: translatex(0%);
+        }
+
+        .reg-bg {
+            transition: backdrop-filter .5s, transform 0s;
+            transition-delay: 0s, .5s;
+            transform: translateX(100%);
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .reg-bg.active {
+            transition: .5s;
+            backdrop-filter: blur(5px);
+            transform: translatex(0%);
+            transition: backdrop-filter .5s, transform 0s;
+        }
+
+        .deleted {
+            transform: translateX(90%);
+        }
     </style>
 </head>
-<body>
-    
-    <div class="mx-16 pt-16">
+
+<body class="max-sm:flex max-sm:justify-center">
+
+    <div class="sm:mx-16 pt-16">
         <div class="">
             <div class="text-7xl text-black-100 flex items-center">
                 <ion-icon name="car" class="ion-title text-black-100 mr-12 dark:text-white"></ion-icon>
-                <p class="text-title">XGD-545</p>
+                <p class="sm:text-title">XGD-545</p>
             </div>
         </div>
 
 
-        <div class="stable flex justify-center">
-            <div class="mt-8 h-160 flex">
+        <div class="stable sm:flex justify-center">
+            <div class="mt-8 h-160 flex max-sm:flex-col">
                 <div>
-                    Datos
-                    <div class="p-3 shadow-xl rounded-xl bg-white dark:bg-darkgrayl">
-                        <div class="flex gap-2">
-                            <button type="button"
-                                class="reg-button flex justify-center items-center w-28 h-12 bg-redd text-white w-20 h-10 rounded hover:shadow-list duration-200 mb-2 focus:bg-l dark:bg-darkredd">
-                                <ion-icon name="add" class="ion-submenu mr-2"></ion-icon>
-                                <p>Añadir</p>
-                            </button>
-                            <button type="button"
-                                class="edit-button flex justify-center items-center w-28 h-12 bg-grayd text-gray-500 w-20 h-10 rounded  duration-200 mb-2 focus:bg-l"
-                                disabled>
-                                <ion-icon name="create-outline" class="ion-submenu mr-2"></ion-icon>
-                                <p>Editar</p>
-                            </button>
-                        </div>
-                        <div class="flex gap-2">
-                            <button type="button"
-                                class="export-button reg-button flex justify-center items-center w-28 h-12 bg-redd dark:bg-darkredd text-white w-20 h-10 rounded hover:shadow-list duration-200 focus:bg-l">
-                                <ion-icon name="download-outline" class="ion-submenu mr-2"></ion-icon>
-                                <p>Exportar</p>
-                            </button>
-                            <a href="usuarios-del.html" target="display">
-                                <button type="button"
-                                    class="reg-button flex justify-center items-center w-28 h-12 bg-redd dark:bg-darkredd text-white w-20 h-10 rounded hover:shadow-list duration-200 focus:bg-l">
-                                    <ion-icon name="trash-outline" class="ion-submenu mr-2"></ion-icon>
-                                    <p>Ocultos</p>
-                                </button>
-                            </a>
+                    <p class="text-xl">Datos</p>
+                    <div class="p-3 shadow-xl flex rounded-xl bg-white dark:bg-darkgrayl h-72 w-96 gap-2 p-8">
+                        <div class=" w-full h-full grid grid-rows-5 items-center grid-cols-2">
+                            <p class="font-bold">ID</p>
+                            <p>1</p>
+                            <p class="font-bold">Placa</p>
+                            <p>XGD123</p>
+                            <p class="font-bold">Propietario</p>
+                            <p>Pepito</p>
+                            <p class="font-bold">Modelo</p>
+                            <p>XXXXXX</p>
+                            <p class="font-bold">Estado</p>
+                            <div class="flex gap-2 items-center">
+                                <div class="vehicle-status bg-slate-300 w-10 h-5 rounded-3xl">
+                                    <div
+                                        class="vehicle-status-dot bg-red-700 border h-full w-1/2 rounded-3xl duration-200">
+                                    </div>
+                                </div>
+                                <p class="vehicle-status-text">Deshabilitado</p>
+                            </div>
                         </div>
                     </div>
                     <div class="flex justify-center items-center">
@@ -149,33 +158,23 @@
                     </div>
                     <p>Adjuntar</p>
                     <div
-                        class="most-used-container p-2 shadow-xl rounded-3xl h-123.2 mt-2 bg-white dark:bg-darkgrayl duration-500">
-                        <div class="flex justify-center mt-3">
-                            <table class="overflow-y-scroll h-custom">
-                                <thead>
-                                    <tr class="flex gap-2">
-                                        <th class="w-12 h-10 border-redd border-b flex justify-center items-center">
-                                            ID</th>
-                                        <th class="w-20 h-10 border-redd border-b flex justify-center items-center">
-                                            Placa</th>
-                                        <th class="w-20 h-10 border-redd border-b flex justify-center items-center">
-                                            Propietario</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="flex border-b gap-2">
-                                        <td class="w-12 h-12 rounded flex justify-center items-center text-xl">1</td>
-                                        <td class="w-20 h-12 rounded flex justify-center items-center text-xl">ABC-123
-                                        </td>
-                                        <td class="w-20 h-12 rounded flex justify-center items-center text-xl">Valentina
-                                            Leon</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        class="most-used-container p-2 shadow-xl rounded-2xl h-32 w-96 mt-2 bg-white dark:bg-darkgrayl duration-500 p-5 flex flex-col justify-center items-center">
+                        <div>
+                            <p class="mb-2">Archivo</p>
+                        <div class="flex gap-5">
+
+                            <div class="w-64 h-10 rounded bg-slate-300"></div>
+                            <div class="bg-redd w-10 h-10 rounded flex items-center justify-center">
+                                <ion-icon name="attach-outline" class="text-white absolute" style="font-size: 32px;">
+                                </ion-icon><input type="file" class="w-10 h-10 opacity-0">
+                        </div>
+                            </div>
+                            <button class="w-20 h-10 bg-redd absolute translate-y-[100%] translate-x-[330%] rounded text-white">Enviar</button>
+                            <button class="w-20 h-10 bg-grayd absolute translate-y-[100%] translate-x-[220%] rounded text-white">Cancelar</button>
                         </div>
                     </div>
                 </div>
-                <div class="p-7 shadow-xl ml-5 rounded-3xl bg-white dark:bg-darkgrayl">
+                <div class="p-7 shadow-xl sm:ml-5 rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:mt-32 max-sm:h-96">
                     <form action="" class="search-form h-10 flex w-full justify-end items-center mb-3 pr-5">
                         <input type="search"
                             class="w-40 h-5 border border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl"
@@ -184,9 +183,9 @@
                             <ion-icon name="search-outline"></ion-icon>
                         </label>
                     </form>
-                    <table class="overflow-y-scroll h-custom">
+                    <table class="sm:overflow-y-scroll sm:h-custom">
                         <thead>
-                            <tr class="flex gap-20">
+                            <tr class="flex gap-5">
                                 <th class="list-select-all flex justify-center items-center mr-5 duration-500">
                                     <ion-icon name="caret-down"
                                         class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
@@ -197,18 +196,18 @@
                                     ID</th>
                                 <th
                                     class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                    Placa</th>
+                                    Fecha</th>
                                 <th
                                     class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                    Propietario</th>
+                                    Hora</th>
                                 <th
                                     class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                    Modelo</th>
+                                    Archivo</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="flex border-b gap-20" tabindex="1">
+                            <tr class="flex border-b gap-5" tabindex="1">
                                 <a href="">
                                     <td class="flex justify-center items-center mr-5">
                                         <input type="checkbox" class="listcheck dark:accent-darkredd"
@@ -224,7 +223,7 @@
                                     </td>
                                 </a>
                             </tr>
-                            <tr class="flex border-b gap-20" tabindex="1">
+                            <tr class="flex border-b gap-5" tabindex="1">
                                 <td class="flex justify-center items-center mr-5">
                                     <input type="checkbox" class="listcheck dark:accent-darkredd"
                                         onclick="checkchecks()">
@@ -238,7 +237,7 @@
                                 </td>
                                 </td>
                             </tr>
-                            <tr class="flex border-b gap-20" tabindex="1">
+                            <tr class="flex border-b gap-5" tabindex="1">
                                 <td class="flex justify-center items-center mr-5">
                                     <input type="checkbox" class="listcheck dark:accent-darkredd"
                                         onclick="checkchecks()">
@@ -255,12 +254,14 @@
                         </tbody>
                     </table>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="script/vehicle-view.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
