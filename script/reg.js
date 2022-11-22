@@ -6,6 +6,7 @@ let cancelregbutton = document.querySelector('.cancel-reg-button');
 let canceleditbutton = document.querySelector('.cancel-edit-button');
 let listselectall = document.querySelector('.list-select-all');
 let editbutton = document.querySelector('.edit-button');
+let deletebutton = document.querySelector('.delete-button');
 let exportbutton = document.querySelector('.export-button');
 let exportformats = document.querySelector('.export-formats');
 let mostusedcontainer = document.querySelector('.most-used-container');
@@ -81,21 +82,21 @@ function checkchecks(){
         listselectall.classList.add('no-rotating')
     }
 
-    if (uncheck==1){
-        editbutton.disabled = false
-        editbutton.classList.remove('bg-grayd')
-        editbutton.classList.add('bg-redd')
-        editbutton.classList.add('text-white')
-        editbutton.classList.remove('text-gray-500')
-        editbutton.classList.add('hover:shadow-list')
-        editbutton.classList.add('dark:bg-darkredd')
+    if (uncheck>=1){
+        deletebutton.disabled = false
+        deletebutton.classList.remove('bg-grayd')
+        deletebutton.classList.add('bg-redd')
+        deletebutton.classList.add('text-white')
+        deletebutton.classList.remove('text-gray-500')
+        deletebutton.classList.add('hover:shadow-list')
+        deletebutton.classList.add('dark:bg-darkredd')
     }else{
-        editbutton.classList.add('bg-grayd')
-        editbutton.classList.add('text-gray-500')
-        editbutton.classList.remove('hover:shadow-list')
-        editbutton.disabled = true
-        editbutton.classList.remove('dark:bg-darkredd')
-        editbutton.classList.remove('bg-redd')
+        deletebutton.classList.add('bg-grayd')
+        deletebutton.classList.add('text-gray-500')
+        deletebutton.classList.remove('hover:shadow-list')
+        deletebutton.disabled = true
+        deletebutton.classList.remove('dark:bg-darkredd')
+        deletebutton.classList.remove('bg-redd')
     }
 }
 
@@ -106,3 +107,24 @@ exportbutton.onclick = function () {
     userstable.classList.toggle('max-sm:h-[50vh]')
 }
 
+let checkarray = [];
+function checkdbrow(e){
+    var id = "form" + e.id;
+
+    if (checkarray.includes(id)){
+        checkarray.delete(id);
+    }else{
+        let nuevaLongitud = checkarray.push(id);
+        console.log(checkarray.size);
+        console.log("No esta");
+    }
+    }
+
+function deletedbdata(){
+    console.log(checkarray.size);
+    for (let i = 0; i < checkarray.size; i++) {
+        var id = checkarray[i];
+        console.log(id);
+        document.getElementById(id).submit();
+    }
+}

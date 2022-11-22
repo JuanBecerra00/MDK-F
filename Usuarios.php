@@ -396,10 +396,18 @@ VALUES('$cant', '$reg_nombre', '$reg_phone', '$reg_job', '$reg_id_type', '$reg_i
                                 }else{
                                     die("Error al insertar los datos: ".$conexion->error);
                                 }
+                                }else if(isset($_POST['checkrow'])){
+                                $id =$_POST['checkrow'];
+                                $sql = "UPDATE users SET status = 1 where id = $id";
+                                if ($conexion->query($sql) === true){
+
+                                }else{
+                                    die("Error al insertar los datos: ".$conexion->error);
+                                }
                             }
                             $sql = "Select * from users";
                             $resultado = $conexion->query($sql);
-
+                            
                             if ($resultado->num_rows > 0){
                                 while ($row = $resultado->fetch_assoc()){
                                     if ($row['job']=='A'){
@@ -410,21 +418,28 @@ VALUES('$cant', '$reg_nombre', '$reg_phone', '$reg_job', '$reg_id_type', '$reg_i
                                         $db_cargo='Mecanico';
                                     }
                                     if ($row['status']=='0'){
-                                        echo '<tr class="flex border-b sm:gap-15" tabindex="1">
-                                    <td class="flex justify-center items-center mr-5">
-                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                            onclick="checkchecks()">
-                                    </td>
-                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['id'].'</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['name'].'
-                                    </td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['phone'].'</td>
-                                    
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$row['email'].'</td>
-                                    
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">'.$db_cargo.' </td>
-                                    <td><ion-icon name="create" class="edit_db flex justify-center items-center h-12 w-5 textslate-500 hover:text-redd duration-200"></ion-icon></td>
-                                </tr>';
+                                        ?>
+                                        <form id="form<?php echo $row['id'];?>" action="#" method="post">
+                                            <tr class="flex border-b sm:gap-15" tabindex="1">
+                                                <td class="flex justify-center items-center mr-5">
+                                                    <input name="checkrow" value="<?php echo $row['id'];?>" id="<?php echo $row['id'];?>" type="checkbox" class="listcheck dark:accent-darkredd"
+                                                           onclick="checkchecks()" onchange="checkdbrow(this)">
+                                                    
+                                                </td>
+                                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['id'];?></td>
+                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['name'];?>
+                                                </td>
+                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['phone'];?></td>
+
+                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['email'];?></td>
+
+                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $db_cargo;?> </td>
+                                                <td class="edit-button "><ion-icon name="create" class="edit_db flex justify-center items-center h-12 w-5 textslate-500 hover:text-redd duration-200"></ion-icon>
+                                                    </td>
+                                            </tr>
+                                        </form>
+                                        <?php
+                                        
                                     }
                                 }
                             }
@@ -442,14 +457,14 @@ VALUES('$cant', '$reg_nombre', '$reg_phone', '$reg_job', '$reg_id_type', '$reg_i
                         <div class="max-sm:w-full max-sm:p-3 shadow-xl rounded-xl bg-white dark:bg-darkgrayl">
                             <div class="sm:flex gap-2 justify-center max-sm:grid max-sm:grid-cols-2">
                                 <button type="button"
-                                    class="reg-button flex justify-center items-center sm:w-28 max-sm:w-full h-12 bg-redd text-white w-20 h-10 rounded hover:shadow-list duration-200 mb-2 focus:bg-l dark:bg-darkredd">
+                                    class="reg-button flex justify-center items-center sm:w-28 max-sm:w-full h-12 bg-redd text-white w-20 h-10 rounded hover:shadow-list duration-200 mb-2 sm:mt-2 focus:bg-l dark:bg-darkredd">
                                     <ion-icon name="add" class="ion-submenu mr-2"></ion-icon>
                                     <p>Añadir</p>
                                 </button>
-                                <button type="button"
-                                    class="edit-button flex justify-center items-center sm:w-28 max-sm:w-full h-12 bg-grayd text-gray-500 w-20 h-10 rounded  duration-200 mb-2 focus:bg-l" disabled>
-                                    <ion-icon name="create-outline" class="ion-submenu mr-2"></ion-icon>
-                                    <p>Editar</p>
+                                <button type="button" onclick="deletedbdata()"
+                                    class="delete-button flex justify-center items-center sm:w-28 max-sm:w-full h-12 bg-grayd text-gray-500 w-20 h-10 rounded  duration-200 mb-2 sm:mt-2 focus:bg-l" disabled>
+                                    <ion-icon name="trash-outline" class="ion-submenu mr-2"></ion-icon>
+                                    <p>Eliminar</p>
                                 </button>
                             </div>
                             <div class="sm:flex gap-2 justify-center max-sm:grid max-sm:grid-cols-2">

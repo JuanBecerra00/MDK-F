@@ -433,7 +433,7 @@
                 </a>
             </li>
             <li class="h-6 flex mb-14">
-                <a href="insumos.html" class="module-storage" target="display">
+                <a href="insumos.php" class="module-storage" target="display">
                     <ion-icon name="file-tray-full" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Insumos</label>
                 </a>
@@ -520,8 +520,8 @@
                 </a>
                 
             </ul>
-            <div class="h-12 flex theme items-center text-white mb-0">
-                <ion-icon name="moon" class=" moon ion opacity-0 dark:opacity-100"></ion-icon>
+            <div class="h-12 flex mobile-theme items-center text-white">
+                <ion-icon name="moon" class="moon ion opacity-0 dark:opacity-100"></ion-icon>
                 <ion-icon name="sunny-outline"
                     class=" sun ion absolute left-5 duration-200 opacity-100 rotate-180 dark:opacity-0 dark:-rotate-180">
                 </ion-icon>
@@ -533,7 +533,7 @@
                     max-sm:bg-grayd max-sm:translate-x-full absolute
                     duration-200 p-5 flex flex-col place-content-between sm:translate-y-[1000%]">
             <ul class="mobile-aside-ul flex flex-col justify-center text-white gap-5">
-                <a href="Usuarios.html" class="mobile-module-users flex items-center" target="display">
+                <a href="Usuarios.html" class="mobile-module-users flex items-center">
                     <li class="h-12 flex items-center">
                         <ion-icon name="person" class="ion text-white
                                         duration-200 ion-module"></ion-icon>
@@ -544,7 +544,7 @@
                 </a>
 
 
-                <a href="clientes.html" class="mobile-module-clients" target="display">
+                <a href="settings.html" class="mobile-module-clients" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="cog-outline" class="ion text-white
                                     duration-200 ion-module"></ion-icon>
@@ -554,12 +554,14 @@
                 </a>
                 
             </ul>
-            <div class="h-12 flex items-center text-white mb-0">
-                <ion-icon name="log-out" class="ion"></ion-icon>
-                
-                <label class="aside-label relative ml-5
+            <a href="login.html">
+                <div class="h-12 flex items-center text-white mb-0">
+                    <ion-icon name="log-out" class="ion"></ion-icon>
+
+                    <label class="aside-label relative ml-5
                                 duration-300 cursor-pointer">Salir</label>
-            </div>
+                </div>
+            </a>
         </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -567,7 +569,7 @@
     <script src="script/script.js"></script>
     <script src="script/dark.js"></script>
 
-    <footer class="max-sm:invisible absolute bottom-0 bg-grayd w-full text-white h-8">
+    <footer class="absolute bottom-0 bg-grayd w-full text-white h-8">
         <ul class="absolute flex gap-5 inset-y-0 w-full place-content-between px-12 max-sm:px-5">
             <li class="sm:invisible sm:opacity-0"><a href="" class="align-middle hover:underline">Ayuda</a></li>
             <div class="flex gap-5">

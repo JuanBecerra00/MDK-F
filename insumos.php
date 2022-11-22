@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/output.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         var checkCookie = function() {
@@ -21,8 +21,8 @@
         }();
         window.setInterval(checkCookie, 1);
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
+
+    <style>
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow:hidden;
@@ -85,10 +85,6 @@
             .deleted{
                 transform: translateX(90%);
             }
-        }
-    </style>
-
-    <style>
         .reg-back {
             transform: translateX(-30px);
         }
@@ -212,7 +208,8 @@
                     <br>
                     <label for="amount">Cantidad</label><br>
                     <input type="text" id="amount" placeholder="5" pattern=".{8,}" maxlength="7" name="edit_amount" class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4">
-                    <label for="value_uni">Valor unitario</label><br>
+                    <br>
+                    <label for="value_uni">Valor unitario</label>
                     <input type="number" id="value_uni" required name="edit_value_uni" class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd max-sm:mb-4"><br>
                     <label for="number_fact"> N° de factura</label>
                 </div>
@@ -282,11 +279,11 @@
                             }
 
                             if (isset($_POST['reg_nombre'])) {
-                                $reg_name_pro = $_POST['reg_name_pro'];
-                                $reg_amount = $_POST['reg_amount'];
-                                $reg_value_uni = $_POST['reg_value_uni'];
-                                $reg_number_fact = $_POST['reg_number_fact'];
-                                $reg_date_buy = $_POST['reg_date_buy'];
+                                $product_reg_name = $_POST['pro_reg_name'];
+                                $product_reg_amount = $_POST['pro_reg_amount'];
+                                $product_reg_value_uni = $_POST['pro_reg_value'];
+                                $product_reg_facture = $_POST['pro_reg_fact_num'];
+                                $product_reg_date = $_POST['pro_reg_date'];
                                 $sql = "Select * from users";
                                 $resultado = $conexion->query($sql);
                                 $db_datacant = $resultado->num_rows;
@@ -300,7 +297,9 @@ VALUES('$cant', '$reg_name_pro', '$reg_amount', '$reg_value_uni', '$reg_number_f
                             }
                             $sql = "Select * from users";
                             $resultado = $conexion->query($sql);
-                            if ($row['status'] == '0') {
+                            if ($resultado->num_rows > 0){
+                            while ($row = $resultado->fetch_assoc()){
+                            if ($row['status']=='0'){
                                 echo '<tr class="flex border-b sm:gap-15" tabindex="1">
                                     <td class="flex justify-center items-center mr-5">
                                         <input type="checkbox" class="listcheck dark:accent-darkredd"
@@ -318,7 +317,7 @@ VALUES('$cant', '$reg_name_pro', '$reg_amount', '$reg_value_uni', '$reg_number_f
                                     <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">' . $row['date_buy'] . ' </td>
                                     <td><ion-icon name="create" class="edit_db flex justify-center items-center h-12 w-5 textslate-500 hover:text-redd duration-200"></ion-icon></td>
                                 </tr>';
-                            }
+                            }}}
                             $conexion->close();
                             ?>
                         </tbody>
@@ -396,7 +395,6 @@ VALUES('$cant', '$reg_name_pro', '$reg_amount', '$reg_value_uni', '$reg_number_f
     <script src="script/reg.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="script/tailwind.config.js"></script>
 </body>
 
 </html>
