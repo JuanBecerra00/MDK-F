@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="shortcut icon" href="assets/img/logo.ico" type="image/x-icon">
-    <link href="css/output.css" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         let x = document.cookie;
@@ -231,7 +231,7 @@
     </div>
     <header
         class="bg-grayd fixed max-sm:fixed w-full flex px-20 max-sm:px-10 place-content-between items-center z-50 overflow-visible h-20 max-sm:h-16">
-        <a href=""><img src="assets/img/logo.svg" alt="X" class="header-logo h-8" tabindex="1"></a>
+        <a href=""><img src="/resources/img/logo.svg" alt="X" class="header-logo h-8" tabindex="1"></a>
         <ul class="header-modules flex text-white items-center text-header gap-5">
             <li class="max-sm:invisible max-sm:opacity-0">
                 <a href="" tabindex="1">
@@ -296,15 +296,15 @@
     <main class=" max-sm:pt-16">
         <div class="h-128 max-sm:h-32 w-full overflow-hidden flex justify-center items-center">
             <div class="images flex items-center w-auto fixed -z-10">
-                <img src="assets/img/home-images/1.jpg" alt="" class=" -z-10 blur">
-                <img src="assets/img/home-images/2.jpg" alt="" class=" -z-10 blur">
-                <img src="assets/img/home-images/3.jpg" alt="" class=" -z-10 blur">
-                <img src="assets/img/home-images/4.jpg" alt="" class=" -z-10 blur">
-                <img src="assets/img/home-images/5.jpg" alt="" class=" -z-10 blur">
+                <img src="/resources/img/home-images/1.jpg" alt="" class=" -z-10 blur">
+                <img src="/resources/img/home-images/2.jpg" alt="" class=" -z-10 blur">
+                <img src="/resources/img/home-images/3.jpg" alt="" class=" -z-10 blur">
+                <img src="/resources/img/home-images/4.jpg" alt="" class=" -z-10 blur">
+                <img src="/resources/img/home-images/5.jpg" alt="" class=" -z-10 blur">
             </div>
             <img src="" alt="" class="blur">
             <div class="max-sm:scale-50 h-32 w-32 z-10 absolute">
-                <img src="assets/img/logo.svg" alt="" class="h-32">
+                <img src="/resources/img/logo.svg" alt="" class="h-32">
                 <p class="flex justify-center text-white text-3xl mt-5 font-semibold">MDK</p>
             </div>
         </div>
@@ -320,7 +320,7 @@
         </div>
         <div
             class="modulos p-12 max-sm:p-5 w-full overflow-hidden flex flex-wrap justify-center items-center gap-8 max-sm:gap-2 text-white bg-white dark:bg-darkgrayd duration-500">
-            <a href="modulos.html">
+            <a href="/views/modulos.php">
                 <button
                     class="bg-redd dark:bg-darkredd h-72 w-56 rounded-md sm:hover:shadow-cards duration-200 sm:hover:-mt-10 max-sm max-sm:h-24 max-sm:w-28 max-sm:p-4">
                     <div class=" w-full flex justify-center items-center mt-8 max-sm:mt-0">
@@ -474,10 +474,8 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="script/tailwind.config.js">
-    </script>
-    <script src="script/script.js"></script>
-    <script src="script/dark.js"></script>
+    <script src="/script/script.js"></script>
+    <script src="/script/dark.js"></script>
 </body>
 
 </html>

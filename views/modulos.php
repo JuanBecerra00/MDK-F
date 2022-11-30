@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración</title>
-    <link rel="shortcut icon" href="assets/img/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/resources/img/logo.ico" type="image/x-icon">
     <script>
         let html = document.querySelector('html');
         let x = document.cookie;
@@ -22,7 +22,7 @@
 
 
     </script>
-    <link href="css/output.css" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
 
     <style>
         body {
@@ -292,14 +292,14 @@
 
 
             <ion-icon name="add"
-                class="header-aside-x ion text-white duration-200 ion-module rotate-45 absolute sm:opacity-0 max-sm:opacity-0">
+                class="header-aside-x ion text-white duration-200 ion-module rotate-45 absolute sm:invisible sm:opacity-0 max-sm:opacity-0">
             </ion-icon>
             <ion-icon name="menu" class="header-aside text-[24px]
                     sm:w-0 sm:invisible sm:h-0"></ion-icon>
-            <a href="index.html"><img src="assets/img/logo.svg" alt="X" class="header-logo h-8 max-sm:w-0 max-sm:invisible
+            <a href="index.html"><img src="/resources/img/logo.svg" alt="X" class="header-logo h-8 max-sm:w-0 max-sm:invisible
                         max-sm:h-0" tabindex="1"></a>
         </div>
-        <a href="index.html"><img src="assets/img/logo.svg" alt="X" class="header-logo h-8 sm:w-0 sm:invisible sm:h-0"
+        <a href="index.html"><img src="/resources/img/logo.svg" alt="X" class="header-logo h-8 sm:w-0 sm:invisible sm:h-0"
                 tabindex="1"></a>
         <ul class="header-modules flex text-white items-center text-header">
             <li class="max-sm:w-0 max-sm:invisible max-sm:h-0">
@@ -409,38 +409,38 @@
         </div>
         <ul class="aside-ul mt-20 p-3">
             <li class="h-6 flex mb-14">
-                <a href="Usuarios.php" class="module-users select" target="display">
+                <a href="/views/modules/usuarios/Usuarios.php" class="module-users select" target="display">
                     <ion-icon name="person" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Usuarios</label>
                 </a>
             </li>
             <li class="h-6 flex mb-14">
-                <a href="clientes.html" class="module-clients" target="display">
+                <a href="/views/modules/clientes/clientes.html" class="module-clients" target="display">
                     <ion-icon name="people" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Clientes</label>
                 </a>
             </li>
             <li class="h-6 flex mb-14">
-                <a href="vehiculos.html" class="module-cars" target="display">
+                <a href="/views/modules/vehiculos/vehiculos.html" class="module-cars" target="display">
                     <ion-icon name="car" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <span class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Vehiculos</span>
                 </a>
             </li>
             <li class="h-6 flex mb-14">
-                <a href="Proveedores.html" class="module-buy" target="display">
+                <a href="/views/modules/proveedores/Proveedores.html" class="module-buy" target="display">
                     <ion-icon name="cart" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Proveedores</label>
                 </a>
             </li>
             <li class="h-6 flex mb-14">
-                <a href="insumos.php" class="module-storage" target="display">
+                <a href="/views/modules/insumos/insumos.html" class="module-storage" target="display">
                     <ion-icon name="file-tray-full" class="ion text-white duration-200 mt-1.5 ion-module"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Insumos</label>
                 </a>
             </li>
             <hr class="aside-separator active">
             <li class="h-6 flex mb-14">
-                <a href="facturacion.html" target="display" class="module-sell">
+                <a href="/views/modules/facturacion/facturacion.html" target="display" class="module-sell">
                     <ion-icon name="cash" class="ion text-white duration-200 mt-1.5 ion-module ion-money"></ion-icon>
                     <label class="aside-label relative bottom-1 ml-5 duration-300 cursor-pointer">Facturacion</label>
                 </a>
@@ -456,7 +456,7 @@
             </span>
         </div>
     </aside>
-    <iframe src="Usuarios.php" frameborder="0"
+    <iframe src="/views/modules/usuarios/Usuarios.php" frameborder="0"
         class="iframe max-sm:h-[calc(100vh-165px)]
         max-sm:h-[calc(100vh-165px)] max-sm:w-screen sm:mt-12 active sm:-z-10 absolute sm:right-0 duration-500 bg-transparent" name="display"></iframe>
 
@@ -465,7 +465,7 @@
                     max-sm:bg-grayd max-sm:-translate-x-full absolute
                     duration-200 p-5 flex flex-col place-content-between sm:translate-y-[1000%]">
             <ul class="mobile-aside-ul flex flex-col justify-center text-white gap-5">
-                <a href="Usuarios.html" class="mobile-module-users flex items-center" target="display">
+                <a href="/views/modules/usuarios/Usuarios.html" class="mobile-module-users flex items-center" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="person" class="ion text-white
                                         duration-200 ion-module"></ion-icon>
@@ -476,7 +476,7 @@
                 </a>
 
 
-                <a href="clientes.html" class="mobile-module-clients" target="display">
+                <a href="/views/modules/clientes//clientes.html" class="mobile-module-clients" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="people" class="ion text-white
                                     duration-200 ion-module"></ion-icon>
@@ -484,7 +484,7 @@
                                     duration-300 cursor-pointer">Clientes</label>
                     </li>
                 </a>
-                <a href="vehiculos.html" class="mobile-module-cars" target="display">
+                <a href="/views/modules/vehiculos/vehiculos.html" class="mobile-module-cars" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="car" class="ion text-white
                                 duration-200 ion-module"></ion-icon>
@@ -493,7 +493,7 @@
                     </li>
 
                 </a>
-                <a href="proveedores.html" class="mobile-module-buy" target="display">
+                <a href="/views/modules/proveedores.html" class="mobile-module-buy" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="cart" class="ion text-white
                                     duration-200 ion-module"></ion-icon>
@@ -501,7 +501,7 @@
                                     duration-300 cursor-pointer">Proveedores</label>
                     </li>
                 </a>
-                <a href="insumos.html" class="mobile-module-storage" target="display">
+                <a href="/views/insumos.html" class="mobile-module-storage" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="file-tray-full" class="ion
                                     text-white duration-200 ion-module"></ion-icon>
@@ -510,7 +510,7 @@
                     </li>
                 </a>
                 <hr class="mobile-aside-separator active w-full">
-                <a href="facturacion.html" target="display" class="mobile-module-sell">
+                <a href="/views/facturacion.html" target="display" class="mobile-module-sell">
                     <li class="h-12 flex items-center">
                         <ion-icon name="cash" class="ion text-white
                                     duration-200 ion-module ion-money"></ion-icon>
@@ -533,7 +533,7 @@
                     max-sm:bg-grayd max-sm:translate-x-full absolute
                     duration-200 p-5 flex flex-col place-content-between sm:translate-y-[1000%]">
             <ul class="mobile-aside-ul flex flex-col justify-center text-white gap-5">
-                <a href="Usuarios.html" class="mobile-module-users flex items-center">
+                <a href="/views/Usuarios.html" class="mobile-module-users flex items-center">
                     <li class="h-12 flex items-center">
                         <ion-icon name="person" class="ion text-white
                                         duration-200 ion-module"></ion-icon>
@@ -544,7 +544,7 @@
                 </a>
 
 
-                <a href="settings.html" class="mobile-module-clients" target="display">
+                <a href="/views/settings.html" class="mobile-module-clients" target="display">
                     <li class="h-12 flex items-center">
                         <ion-icon name="cog-outline" class="ion text-white
                                     duration-200 ion-module"></ion-icon>
@@ -554,7 +554,7 @@
                 </a>
                 
             </ul>
-            <a href="login.html">
+            <a href="/views/login.html">
                 <div class="h-12 flex items-center text-white mb-0">
                     <ion-icon name="log-out" class="ion"></ion-icon>
 
@@ -565,9 +565,9 @@
         </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="aside.js"></script>
-    <script src="script/script.js"></script>
-    <script src="script/dark.js"></script>
+    <script src="/script/aside.js"></script>
+    <script src="/script/script.js"></script>
+    <script src="/script/dark.js"></script>
 
     <footer class="absolute bottom-0 bg-grayd w-full text-white h-8">
         <ul class="absolute flex gap-5 inset-y-0 w-full place-content-between px-12 max-sm:px-5">
