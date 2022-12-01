@@ -229,10 +229,10 @@
             <button type="reset" class="cancel-reg-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>
             <button type="submit" class="bg-redd dark:bg-darkredd text-white w-20 h-10 rounded">Continuar</button>
         </div>
-    </div>
     </form>
+    </div>
 
-    
+
     <div class="edit h-full max-sm:h-screen sm:w-152 max-sm:w-screen absolute mt-0 p-0 z-30 right-0 bg-white dark:bg-darkgrayl max-sm:overflow-y-scroll">
         <div class="p-10">
             <div class="text-7xl text-black-100 flex mt-10 items-center justify-center max-sm:block max-sm:mt-12 max-sm:text-center">
@@ -332,124 +332,63 @@
                             </label>
                         </form>
                         <!-----><table class="overflow-y-scroll h-custom">
-                            <thead>
-                                <tr class="flex sm:gap-15">
-                                    <th class="list-select-all flex justify-center items-center mr-5 duration-500">
-                                        <ion-icon name="caret-down"
-                                            class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
-                                        </ion-icon>
-                                    </th>
-                                    <th
-                                        class="w-16 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                        ID</th>
-                                    <th
-                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                        Nombre</th>
-                                    <th
-                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                        Telefono</th>
-                                    <th
-                                            class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                        Correo</th>
-                                    <th
-                                        class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
-                                        Cargo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $server = "localhost";
-                            $user = "root";
-                            $password = "";
-                            $db = "mdk";
-                            $conexion = new mysqli($server, $user, $password, $db);
-                            if($conexion ->connect_error){
-                                die("Conexion fallida: " . $conexion->connect_error);
-                            }
-
-                            if (isset($_POST['reg_nombre'])){
-                                $reg_id_type = $_POST['reg_id_type'];
-                                $reg_id_number = $_POST['reg_id_number'];
-                                $reg_job = $_POST['reg_job'];
-                                $reg_nombre = $_POST['reg_nombre'];
-                                $reg_phone = $_POST['reg_phone'];
-                                $reg_password = $_POST['reg_password'];
-                                $reg_question = $_POST['reg_question'];
-                                $reg_answer = $_POST['reg_answer'];
-                                $reg_email = $_POST['reg_email'];
-                                $sql = "Select * from users";
-                                $resultado = $conexion->query($sql);
-                                $db_datacant = $resultado->num_rows;
-                                $cant = $db_datacant+1;
-                                $sql = "INSERT INTO users(id, name, phone, job, id_type, id_number, password, question, answer, email, status)
-VALUES('$cant', '$reg_nombre', '$reg_phone', '$reg_job', '$reg_id_type', '$reg_id_number', '$reg_password', '$reg_question', '$reg_answer', '$reg_email', 0 )";
-
-                                if ($reg_job=='A'){
-                                    $cargo='Admin';
-                                }elseif ($reg_job=='T'){
-                                    $cargo='Trabajador';
-                                }elseif ($reg_job=='M'){
-                                    $cargo='Mecanico';
-                                }
-                                if ($conexion->query($sql) === true){
-                                    
-                                }else{
-                                    die("Error al insertar los datos: ".$conexion->error);
-                                }
-                                }else if(isset($_POST['checkrow'])){
-                                $id =$_POST['checkrow'];
-                                $sql = "UPDATE users SET status = 1 where id = $id";
-                                if ($conexion->query($sql) === true){
-
-                                }else{
-                                    die("Error al insertar los datos: ".$conexion->error);
-                                }
-                            }
-                            $sql = "Select * from users";
-                            $resultado = $conexion->query($sql);
+                        <thead>
+                            <tr class="flex sm:gap-15">
+                                <th class="list-select-all flex justify-center items-center mr-5 duration-500">
+                                    <ion-icon name="caret-down"
+                                        class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
+                                    </ion-icon>
+                                </th>
+                                <th
+                                    class="w-16 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    ID</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Nombre</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Vehiculo(s)</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Ciudad</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Telefono</th>
+                                <th
+                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    Correo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="flex border-b items-center">
+                                <td class="flex justify-center items-center mr-5">
+                                    <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                        onclick="checkchecks()">
+                                </td>
+                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina Leon
+                                </td>
+                                <td class="w-40 h-fit mr-5 rounded flex justify-center items-center text-xl" >ABC-123 <br> ZXC-012 <br> ZXC-012 <br> ZXC-012 <br> ZXC-012 </td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Sogamoso</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">3125468795</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ejemplo@gmail.com</td>
+                            </tr>
+                            <tr class="flex border-b items-center">
+                                <td class="flex justify-center items-center mr-5">
+                                    <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                        onclick="checkchecks()">
+                                </td>
+                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina Leon
+                                </td>
+                                <td class="w-40 h-fit mr-5 rounded flex justify-center items-center text-xl">ABC-123</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Sogamoso</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">3125468795</td>
+                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ejemplo@gmail.com</td>
+                            </tr>
                             
-                            if ($resultado->num_rows > 0){
-                                while ($row = $resultado->fetch_assoc()){
-                                    if ($row['job']=='A'){
-                                        $db_cargo='Admin';
-                                    }elseif ($row['job']=='T'){
-                                        $db_cargo='Trabajador';
-                                    }elseif ($row['job']=='M'){
-                                        $db_cargo='Mecanico';
-                                    }
-                                    if ($row['status']=='0'){
-                                        ?>
-                                        <form id="form<?php echo $row['id'];?>" action="#" method="post">
-                                            <tr class="flex border-b sm:gap-15" tabindex="1">
-                                                <td class="flex justify-center items-center mr-5">
-                                                    <input name="checkrow" value="<?php echo $row['id'];?>" id="<?php echo $row['id'];?>" type="checkbox" class="listcheck dark:accent-darkredd"
-                                                           onclick="checkchecks()" onchange="checkdbrow(this)">
-                                                    
-                                                </td>
-                                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['id'];?></td>
-                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['name'];?>
-                                                </td>
-                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['phone'];?></td>
-
-                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $row['email'];?></td>
-
-                                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl"><?php echo $db_cargo;?> </td>
-                                                <td class="edit-button "><ion-icon name="create" class="edit_db flex justify-center items-center h-12 w-5 textslate-500 hover:text-redd duration-200"></ion-icon>
-                                                    </td>
-                                            </tr>
-                                        </form>
-                                        <?php
-                                        
-                                    }
-                                }
-                            }
-                            $conexion->close();
-                            ?>
-                                
-                                
-
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
                 <div class="">
