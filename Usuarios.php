@@ -368,7 +368,7 @@
                                 <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
                                 <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina Leon
                                 </td>
-                                <td class="w-40 h-fit mr-5 rounded flex justify-center items-center text-xl" >ABC-123 <br> ZXC-012 <br> ZXC-012 <br> ZXC-012 <br> ZXC-012 </td>
+                                <td class="w-40 h-fit mr-5 rounded flex justify-center items-center text-xl" >ABC-125 <br> ZXC-022 <br> ZXC-012 <br> ZXC-012 <br> ZXC-012 </td>
                                 <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Sogamoso</td>
                                 <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">3125468795</td>
                                 <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ejemplo@gmail.com</td>
