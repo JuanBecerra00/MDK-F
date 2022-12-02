@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="css/output.css" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         let x = document.cookie;
@@ -109,7 +109,7 @@
         <div class="">
             <div class="text-7xl text-black-100 flex items-center">
                 <ion-icon name="car" class="ion-title text-black-100 mr-12 dark:text-white"></ion-icon>
-                <p class="sm:text-title">XGD-545</p>
+                <p style="font-size: 42px;" class="text">XGD-545</p>
             </div>
         </div>
 
@@ -117,7 +117,7 @@
         <div class="stable sm:flex justify-center">
             <div class="mt-8 h-160 flex max-sm:flex-col">
                 <div>
-                    <p class="text-xl">Datos</p>
+                    <p style="font-size: 32px;">Datos</p>
                     <div class="p-3 shadow-xl flex rounded-xl bg-white dark:bg-darkgrayl h-72 w-96 gap-2 p-8">
                         <div class=" w-full h-full grid grid-rows-5 items-center grid-cols-2">
                             <p class="font-bold">ID</p>
@@ -130,9 +130,9 @@
                             <p>XXXXXX</p>
                             <p class="font-bold">Estado</p>
                             <div class="flex gap-2 items-center">
-                                <div class="vehicle-status bg-slate-300 w-10 h-5 rounded-3xl">
+                                <div class="vehicle-status bg-zinc-300 w-10 h-5 rounded-3xl">
                                     <div
-                                        class="vehicle-status-dot bg-red-700 border h-full w-1/2 rounded-3xl duration-200">
+                                        class="vehicle-status-dot bg-red-700 h-full w-1/2 rounded-3xl duration-200">
                                     </div>
                                 </div>
                                 <p class="vehicle-status-text">Deshabilitado</p>
@@ -156,17 +156,17 @@
                             </button>
                         </div>
                     </div>
-                    <p>Adjuntar</p>
+                    <p style="font-size: 32px;">Adjuntar</p>
                     <div
                         class="most-used-container p-2 shadow-xl rounded-2xl h-32 w-96 mt-2 bg-white dark:bg-darkgrayl duration-500 p-5 flex flex-col justify-center items-center">
                         <div>
                             <p class="mb-2">Archivo</p>
                         <div class="flex gap-5">
 
-                            <div class="w-64 h-10 rounded bg-slate-300"></div>
-                            <div class="bg-redd w-10 h-10 rounded flex items-center justify-center">
+                            <div class="w-64 h-10 rounded bg-zinc-300 flex items-center px-3"><p class="filenamep w-full overflow-hidden"></p></div>
+                            <div class="bg-redd w-10 h-10 rounded flex items-center justify-center cursor-pointer">
                                 <ion-icon name="attach-outline" class="text-white absolute" style="font-size: 32px;">
-                                </ion-icon><input type="file" class="w-10 h-10 opacity-0">
+                                </ion-icon><input type="file" class="fileinput w-10 h-10 opacity-0" id="upload" onchange="getFileData(this);">
                         </div>
                             </div>
                             <button class="w-20 h-10 bg-redd absolute translate-y-[100%] translate-x-[330%] rounded text-white">Enviar</button>
@@ -174,85 +174,65 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-7 shadow-xl sm:ml-5 rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:mt-32 max-sm:h-96">
+                <div class=" sm:ml-5">
+                    <p style="font-size: 32px;">Informes</p>
+                <div class="p-7 shadow-xl rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:mt-32 max-sm:h-96">
                     <form action="" class="search-form h-10 flex w-full justify-end items-center mb-3 pr-5">
                         <input type="search"
-                            class="w-40 h-5 border border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl"
+                            class="w-40 h-5 border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl border"
                             id="listsearch" placeholder=" ">
                         <label for="listsearch" class="lbl-search mr-3 flex items-center duration-500 absolute">
                             <ion-icon name="search-outline"></ion-icon>
                         </label>
                     </form>
-                    <table class="sm:overflow-y-scroll sm:h-custom">
+                    <table class="sm:overflow-y-scroll sm:h-table sm:w-212">
                         <thead>
-                            <tr class="flex gap-5">
-                                <th class="list-select-all flex justify-center items-center mr-5 duration-500">
+                            <tr class="flex gap-10">
+                                <th class="list-select-all flex justify-center items-center duration-500">
                                     <ion-icon name="caret-down"
                                         class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
                                     </ion-icon>
                                 </th>
                                 <th
-                                    class="w-16 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    class="w-16 h-10 border-redd border-b flex justify-center items-center text-redd-500">
                                     ID</th>
                                 <th
-                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
                                     Fecha</th>
                                 <th
-                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
                                     Hora</th>
                                 <th
-                                    class="w-40 h-10 mr-5 border-redd border-b flex justify-center items-center text-redd-500">
+                                    class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
                                     Archivo</th>
+                                    
+                                    <th class=" self-end h-12 w-full"></th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="flex border-b gap-5" tabindex="1">
+                            <tr class="flex border-b gap-10" tabindex="1">
                                 <a href="">
-                                    <td class="flex justify-center items-center mr-5">
+                                    <td class="flex justify-center items-center">
                                         <input type="checkbox" class="listcheck dark:accent-darkredd"
                                             onclick="checkchecks()">
                                     </td>
-                                    <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ABC-123
+                                    <td class="w-16 h-12 rounded flex justify-center items-center text-xl">1</td>
+                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">ABC-123
                                     </td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">
+                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">
                                         Valentina Leon</td>
-                                    <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Shelby
+                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
                                         GT500</td>
+                                    </td>
+                                    <td class="bg-redd self-end h-12 w-full">
+
                                     </td>
                                 </a>
                             </tr>
-                            <tr class="flex border-b gap-5" tabindex="1">
-                                <td class="flex justify-center items-center mr-5">
-                                    <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                        onclick="checkchecks()">
-                                </td>
-                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
-                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ABC-123
-                                </td>
-                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina
-                                    Leon</td>
-                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Shelby GT500
-                                </td>
-                                </td>
-                            </tr>
-                            <tr class="flex border-b gap-5" tabindex="1">
-                                <td class="flex justify-center items-center mr-5">
-                                    <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                        onclick="checkchecks()">
-                                </td>
-                                <td class="w-16 h-12 mr-5 rounded flex justify-center items-center text-xl">1</td>
-                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">ABC-123
-                                </td>
-                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Valentina
-                                    Leon</td>
-                                <td class="w-40 h-12 mr-5 rounded flex justify-center items-center text-xl">Shelby GT500
-                                </td>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
+                </div>
                 </div>
 
             </div>
@@ -260,7 +240,7 @@
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script src="script/vehicle-view.js"></script>
+    <script src="/script/vehicle-view.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
