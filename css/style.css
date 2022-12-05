@@ -1,0 +1,46 @@
+.list-select-all.no-rotating {
+    animation: norotating .5s forwards;
+    transform: rotate(180deg);
+}
+
+@keyframes norotating {
+    50% {
+        transform: rotate(-20deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+.list-select-all.rotating {
+    animation: rotating .5s forwards;
+}
+
+@keyframes rotating {
+    50% {
+        transform: rotate(200deg);
+    }
+
+    75% {
+        transform: rotate(160deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+.hovertd{
+    opacity: 0.5;
+}
+
+.hovertd:hover{
+    opacity: 1;
+}
+.hovertd *:hover{
+}

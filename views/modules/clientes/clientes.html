@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/css/output.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         var checkCookie = function () {
@@ -21,8 +21,8 @@
         }();
         window.setInterval(checkCookie, 1);
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
+
+    <style>
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow:hidden;
@@ -85,10 +85,6 @@
             .deleted{
                 transform: translateX(90%);
             }
-        }
-    </style>
-
-    <style>
         .reg-back {
             transform: translateX(-30px);
         }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/css/output.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         let x = document.cookie;
@@ -106,7 +107,7 @@
 <body class="max-sm:flex max-sm:justify-center">
 
     <div class="sm:mx-16 pt-16">
-        <div class="">
+        <div class="max-sm:w-screen max-sm:flex max-sm:justify-center max-sm:-mx-3">
             <div class="text-7xl text-black-100 flex items-center">
                 <ion-icon name="car" class="ion-title text-black-100 mr-12 dark:text-white"></ion-icon>
                 <p style="font-size: 42px;" class="text">XGD-545</p>
@@ -139,7 +140,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-center items-center">
+                    <div class="flex justify-center items-center max-sm:mb-10">
                         <div
                             class="export-formats shadow-xl z- dark:bg-darkgrayl rounded-xl h-0 w-full mt-2 top-20 duration-500 flex justify-center items-center overflow-hidden gap-3 dark:bg-darkgrayl">
                             <button
@@ -158,7 +159,7 @@
                     </div>
                     <p style="font-size: 32px;">Adjuntar</p>
                     <div
-                        class="most-used-container p-2 shadow-xl rounded-2xl h-32 w-96 mt-2 bg-white dark:bg-darkgrayl duration-500 p-5 flex flex-col justify-center items-center">
+                        class="most-used-container p-2 shadow-xl rounded-2xl h-32 w-96 mt-2 bg-white dark:bg-darkgrayl duration-500 p-5 flex flex-col justify-center items-center max-sm:mb-20">
                         <div>
                             <p class="mb-2">Archivo</p>
                         <div class="flex gap-5">
@@ -174,9 +175,9 @@
                         </div>
                     </div>
                 </div>
-                <div class=" sm:ml-5">
+                <div class=" max-sm:mb-10 sm:ml-5">
                     <p style="font-size: 32px;">Informes</p>
-                <div class="p-7 shadow-xl rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:mt-32 max-sm:h-96">
+                <div class=" p-7 shadow-xl rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:h-96 max-sm:mb-10">
                     <form action="" class="search-form h-10 flex w-full justify-end items-center mb-3 pr-5">
                         <input type="search"
                             class="w-40 h-5 border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl border"
@@ -187,7 +188,7 @@
                     </form>
                     <table class="sm:overflow-y-scroll sm:h-table sm:w-212">
                         <thead>
-                            <tr class="flex gap-10">
+                            <tr class="flex max-sm:gap-2 sm:gap-10">
                                 <th class="list-select-all flex justify-center items-center duration-500">
                                     <ion-icon name="caret-down"
                                         class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
@@ -211,7 +212,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="flex border-b gap-10" tabindex="1">
+                            <tr class="flex border-b max-sm:gap-2 sm:gap-10" tabindex="1">
                                 <a href="">
                                     <td class="flex justify-center items-center">
                                         <input type="checkbox" class="listcheck dark:accent-darkredd"
@@ -225,8 +226,37 @@
                                     <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
                                         GT500</td>
                                     </td>
-                                    <td class="bg-redd self-end h-12 w-full">
-
+                                    <td class="hovertd flex self-end h-12 w-full justify-end items-center gap-5 p-2">
+                                        <div class="w-7 h-7 flex justify-center items-center">
+                                            <ion-icon name="document-attach-outline" class="w-5 h-5 text-grayd cursor-pointer"></ion-icon>
+                                        </div>
+                                        <div class="w-7 h-7 flex justify-center items-center">
+                                            <ion-icon name="add" class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
+                                        </div>
+                                    </td>
+                                </a>
+                            </tr>
+                            <tr class="flex border-b max-sm:gap-2 sm:gap-10" tabindex="1">
+                                <a href="">
+                                    <td class="flex justify-center items-center">
+                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                            onclick="checkchecks()">
+                                    </td>
+                                    <td class="w-16 h-12 rounded flex justify-center items-center text-xl">1</td>
+                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">ABC-123
+                                    </td>
+                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">
+                                        Valentina Leon</td>
+                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
+                                        GT500</td>
+                                    </td>
+                                    <td class="hovertd flex self-end h-12 w-full justify-end items-center gap-5 p-2">
+                                        <div class="w-7 h-7 flex justify-center items-center">
+                                            <ion-icon name="document-attach-outline" class="w-5 h-5 text-grayd cursor-pointer"></ion-icon>
+                                        </div>
+                                        <div class="w-7 h-7 flex justify-center items-center">
+                                            <ion-icon name="add" class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
+                                        </div>
                                     </td>
                                 </a>
                             </tr>
@@ -241,6 +271,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="/script/vehicle-view.js"></script>
+    <script src="/script/checks.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 

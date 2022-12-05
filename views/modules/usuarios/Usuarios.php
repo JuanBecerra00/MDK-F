@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/css/output.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         var checkCookie = function () {
@@ -84,44 +85,6 @@
             }
         .reg-back {
             transform: translateX(-30px);
-        }
-
-        .list-select-all.no-rotating {
-            animation: norotating .5s forwards;
-            transform: rotate(180deg);
-        }
-
-        @keyframes norotating {
-            50% {
-                transform: rotate(-20deg);
-            }
-
-            75% {
-                transform: rotate(20deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-
-        }
-
-        .list-select-all.rotating {
-            animation: rotating .5s forwards;
-        }
-
-        @keyframes rotating {
-            50% {
-                transform: rotate(200deg);
-            }
-
-            75% {
-                transform: rotate(160deg);
-            }
-
-            100% {
-                transform: rotate(180deg);
-            }
         }
 
         .lbl-search {
@@ -360,7 +323,7 @@
                             <?php
                             $server = "localhost";
                             $user = "root";
-                            $password = "";
+                            $password = "Juan74334274";
                             $db = "mdk";
                             $conexion = new mysqli($server, $user, $password, $db);
                             if($conexion ->connect_error){
@@ -529,7 +492,7 @@ VALUES('$cant', '$reg_nombre', '$reg_phone', '$reg_job', '$reg_id_type', '$reg_i
         </div>
     </div>
 
-    <script src="/script/reg.js"></script>
+    <script src="/script/checks.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
