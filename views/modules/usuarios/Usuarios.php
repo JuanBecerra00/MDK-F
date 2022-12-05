@@ -323,7 +323,7 @@
                             <?php
                             $server = "localhost";
                             $user = "root";
-                            $password = "Juan74334274";
+                            $password = "74334274";
                             $db = "mdk";
                             $conexion = new mysqli($server, $user, $password, $db);
                             if($conexion ->connect_error){

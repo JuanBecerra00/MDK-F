@@ -118,25 +118,45 @@
         <div class="stable sm:flex justify-center">
             <div class="mt-8 h-160 flex max-sm:flex-col">
                 <div>
-                    <p style="font-size: 32px;">Datos</p>
+                    <div class="flex justify-between items-center">
+                        <p style="font-size: 32px;">Datos</p>
+                        <div class="relative flex items-center justify-center gap-2">
+                            <div
+                                class="data_edit_cancel opacity-0 bg-grayd rounded w-7 h-7 flex justify-center items-center duration-200 invisible">
+                                <ion-icon name="add" class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
+                            </div>
+                            <div
+                                class="data_edit_save opacity-0 bg-grayd rounded w-7 h-7 flex justify-center items-center duration-200 invisible">
+                                <ion-icon name="checkmark" class="w-6 h-6 text-green-700 cursor-pointer"></ion-icon>
+                            </div>
+                            <ion-icon name="create-outline"
+                                class="data_edit w-7 h-7 text-grayd cursor-pointer duration-200 absolute right-0">
+                            </ion-icon>
+                        </div>
+                    </div>
                     <div class="p-3 shadow-xl flex rounded-xl bg-white dark:bg-darkgrayl h-72 w-96 gap-2 p-8">
                         <div class=" w-full h-full grid grid-rows-5 items-center grid-cols-2">
-                            <p class="font-bold">ID</p>
-                            <p>1</p>
-                            <p class="font-bold">Placa</p>
-                            <p>XGD123</p>
-                            <p class="font-bold">Propietario</p>
-                            <p>Pepito</p>
-                            <p class="font-bold">Modelo</p>
-                            <p>XXXXXX</p>
+                            <label class="font-bold" for="npt_id">ID</label>
+                            <input disabled id="npt_id" type="text" value="1"
+                                class="border-b disabled:border-white border-black disabled:bg-white">
+                            <label class="font-bold" for="npt_plate">Placa</label>
+                            <input disabled id="npt_plate" type="text" value="XGD123"
+                                class="border-b disabled:border-white border-black disabled:bg-white">
+                            <label class="font-bold" for="npt_owner">Propietario</label>
+                            <input disabled id="npt_owner" type="text" value="David Martinez"
+                                class="border-b disabled:border-white border-black disabled:bg-white">
+                            <label class="font-bold" for="npt_model">Modelo</label>
+                            <input disabled id="npt_model" type="text" value="Shelvy GT500"
+                                class="border-b disabled:border-white border-black disabled:bg-white">
                             <p class="font-bold">Estado</p>
                             <div class="flex gap-2 items-center">
                                 <div class="vehicle-status bg-zinc-300 w-10 h-5 rounded-3xl">
-                                    <div
-                                        class="vehicle-status-dot bg-red-700 h-full w-1/2 rounded-3xl duration-200">
+                                    <div class="vehicle-status-dot bg-zinc-700 h-full w-1/2 rounded-3xl duration-200">
                                     </div>
                                 </div>
                                 <p class="vehicle-status-text">Deshabilitado</p>
+                                <input disabled type="checkbox" name="" id="npt_status"
+                                    class="absolute translate-y-10 opacity-0">
                             </div>
                         </div>
                     </div>
@@ -162,109 +182,134 @@
                         class="most-used-container p-2 shadow-xl rounded-2xl h-32 w-96 mt-2 bg-white dark:bg-darkgrayl duration-500 p-5 flex flex-col justify-center items-center max-sm:mb-20">
                         <div>
                             <p class="mb-2">Archivo</p>
-                        <div class="flex gap-5">
+                            <div class="flex gap-5">
 
-                            <div class="w-64 h-10 rounded bg-zinc-300 flex items-center px-3"><p class="filenamep w-full overflow-hidden"></p></div>
-                            <div class="bg-redd w-10 h-10 rounded flex items-center justify-center cursor-pointer">
-                                <ion-icon name="attach-outline" class="text-white absolute" style="font-size: 32px;">
-                                </ion-icon><input type="file" class="fileinput w-10 h-10 opacity-0" id="upload" onchange="getFileData(this);">
-                        </div>
+                                <div class="w-64 h-10 rounded bg-zinc-300 flex items-center px-3">
+                                    <p class="filenamep w-full overflow-hidden"></p>
+                                </div>
+                                <div class="bg-redd w-10 h-10 rounded flex items-center justify-center cursor-pointer">
+                                    <ion-icon name="attach-outline" class="text-white absolute"
+                                        style="font-size: 32px;">
+                                    </ion-icon><input type="file" class="fileinput w-10 h-10 opacity-0" id="upload"
+                                        onchange="getFileData(this);">
+                                </div>
                             </div>
-                            <button class="w-20 h-10 bg-redd absolute translate-y-[100%] translate-x-[330%] rounded text-white">Enviar</button>
-                            <button class="w-20 h-10 bg-grayd absolute translate-y-[100%] translate-x-[220%] rounded text-white">Cancelar</button>
+                            <button
+                                class="w-20 h-10 bg-redd absolute translate-y-[100%] translate-x-[330%] rounded text-white">Enviar</button>
+                            <button
+                                class="w-20 h-10 bg-grayd absolute translate-y-[100%] translate-x-[220%] rounded text-white">Cancelar</button>
                         </div>
                     </div>
                 </div>
                 <div class=" max-sm:mb-10 sm:ml-5">
                     <p style="font-size: 32px;">Informes</p>
-                <div class=" p-7 shadow-xl rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:h-96 max-sm:mb-10">
-                    <form action="" class="search-form h-10 flex w-full justify-end items-center mb-3 pr-5">
-                        <input type="search"
-                            class="w-40 h-5 border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl border"
-                            id="listsearch" placeholder=" ">
-                        <label for="listsearch" class="lbl-search mr-3 flex items-center duration-500 absolute">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </label>
-                    </form>
-                    <table class="sm:overflow-y-scroll sm:h-table sm:w-212">
-                        <thead>
-                            <tr class="flex max-sm:gap-2 sm:gap-10">
-                                <th class="list-select-all flex justify-center items-center duration-500">
-                                    <ion-icon name="caret-down"
-                                        class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
-                                    </ion-icon>
-                                </th>
-                                <th
-                                    class="w-16 h-10 border-redd border-b flex justify-center items-center text-redd-500">
-                                    ID</th>
-                                <th
-                                    class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
-                                    Fecha</th>
-                                <th
-                                    class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
-                                    Hora</th>
-                                <th
-                                    class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
-                                    Archivo</th>
-                                    
+                    <div
+                        class=" p-7 shadow-xl rounded-3xl bg-white dark:bg-darkgrayl max-sm:w-96 max-sm:overflow-x-scroll max-sm:h-96 max-sm:mb-10">
+                        <form action="" class="search-form h-10 flex w-full justify-end items-center mb-3 pr-5">
+                            <input type="search"
+                                class="w-40 h-5 border-gray-300 rounded outline-0 npt-search py-3 dark:bg-darkgrayl border"
+                                id="listsearch" placeholder=" ">
+                            <label for="listsearch" class="lbl-search mr-3 flex items-center duration-500 absolute">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                        </form>
+                        <table class="sm:overflow-y-scroll sm:h-table sm:w-212">
+                            <thead>
+                                <tr class="flex max-sm:gap-2 sm:gap-10">
+                                    <th class="list-select-all flex justify-center items-center duration-500">
+                                        <ion-icon name="caret-down"
+                                            class="rounded-2xl p-1 -m-1 cursor-pointer hover:text-redd">
+                                        </ion-icon>
+                                    </th>
+                                    <th
+                                        class="w-16 h-10 border-redd border-b flex justify-center items-center text-redd-500">
+                                        ID</th>
+                                    <th
+                                        class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Fecha</th>
+                                    <th
+                                        class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Hora</th>
+                                    <th
+                                        class="w-56 h-10 border-redd border-b flex justify-center items-center text-redd-500">
+                                        Archivo</th>
+
                                     <th class=" self-end h-12 w-full"></th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="flex border-b max-sm:gap-2 sm:gap-10" tabindex="1">
-                                <a href="">
-                                    <td class="flex justify-center items-center">
-                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                            onclick="checkchecks()">
-                                    </td>
-                                    <td class="w-16 h-12 rounded flex justify-center items-center text-xl">1</td>
-                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">ABC-123
-                                    </td>
-                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">
-                                        Valentina Leon</td>
-                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
-                                        GT500</td>
-                                    </td>
-                                    <td class="hovertd flex self-end h-12 w-full justify-end items-center gap-5 p-2">
-                                        <div class="w-7 h-7 flex justify-center items-center">
-                                            <ion-icon name="document-attach-outline" class="w-5 h-5 text-grayd cursor-pointer"></ion-icon>
-                                        </div>
-                                        <div class="w-7 h-7 flex justify-center items-center">
-                                            <ion-icon name="add" class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
-                                        </div>
-                                    </td>
-                                </a>
-                            </tr>
-                            <tr class="flex border-b max-sm:gap-2 sm:gap-10" tabindex="1">
-                                <a href="">
-                                    <td class="flex justify-center items-center">
-                                        <input type="checkbox" class="listcheck dark:accent-darkredd"
-                                            onclick="checkchecks()">
-                                    </td>
-                                    <td class="w-16 h-12 rounded flex justify-center items-center text-xl">1</td>
-                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">ABC-123
-                                    </td>
-                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">
-                                        Valentina Leon</td>
-                                    <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
-                                        GT500</td>
-                                    </td>
-                                    <td class="hovertd flex self-end h-12 w-full justify-end items-center gap-5 p-2">
-                                        <div class="w-7 h-7 flex justify-center items-center">
-                                            <ion-icon name="document-attach-outline" class="w-5 h-5 text-grayd cursor-pointer"></ion-icon>
-                                        </div>
-                                        <div class="w-7 h-7 flex justify-center items-center">
-                                            <ion-icon name="add" class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
-                                        </div>
-                                    </td>
-                                </a>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="flex border-b max-sm:gap-2 sm:gap-10" tabindex="1">
+                                    <a href="">
+                                        <td class="flex justify-center items-center">
+                                            <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                                onclick="checkchecks()">
+                                        </td>
+                                        <td class="w-16 h-12 rounded flex justify-center items-center text-xl">1</td>
+                                        <td class="w-56 h-12 rounded flex justify-center items-center text-xl">ABC-123
+                                        </td>
+                                        <td class="w-56 h-12 rounded flex justify-center items-center text-xl">
+                                            Valentina Leon</td>
+                                        <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
+                                            GT500</td>
+                                        </td>
+                                        <td
+                                            class="hovertd flex self-end h-12 w-full justify-end items-center gap-5 p-2">
+                                            <div class="w-7 h-7 flex justify-center items-center">
+                                                <ion-icon name="create-outline"
+                                                    class="w-5 h-5 text-grayd cursor-pointer"></ion-icon>
+                                            </div>
+                                            <div class="w-7 h-7 flex justify-center items-center">
+                                                <ion-icon name="add"
+                                                    class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
+                                            </div>
+                                        </td>
+                                    </a>
+                                </tr>
+                                <tr class="flex border-b max-sm:gap-2 sm:gap-10" tabindex="1">
+                                    <a href="">
+                                        <td class="flex justify-center items-center">
+                                            <input type="checkbox" class="listcheck dark:accent-darkredd"
+                                                onclick="checkchecks()">
+                                        </td>
+                                        <td class="w-16 h-12 rounded flex justify-center items-center text-xl">1</td>
+                                        <td class="w-56 h-12 rounded flex justify-center items-center text-xl">ABC-123
+                                        </td>
+                                        <td class="w-56 h-12 rounded flex justify-center items-center text-xl">
+                                            Valentina Leon</td>
+                                        <td class="w-56 h-12 rounded flex justify-center items-center text-xl">Shelby
+                                            GT500</td>
+                                        </td>
+                                        <td
+                                            class="hovertd flex self-end h-12 w-full justify-end items-center gap-5 p-2">
+                                            <div class="w-7 h-7 flex justify-center items-center">
+                                                <ion-icon name="create-outline"
+                                                    class="w-5 h-5 text-grayd cursor-pointer"></ion-icon>
+                                            </div>
+                                            <div class="w-7 h-7 flex justify-center items-center">
+                                                <ion-icon name="add"
+                                                    class="w-7 h-7 rotate-45 text-red-500 cursor-pointer"></ion-icon>
+                                            </div>
+                                        </td>
+                                    </a>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+    <div class="bg-green-700 translate-x-full"></div>>
+
+    <div class="warning invisible opacity-0 w-full h-full backdrop-blur-sm absolute top-0 left-0 flex justify-center items-center duration-200">
+        <div class="w-96 h-32 bg-white shadow-[0px_0px_100px_-12px_rgb(0_0_0_/_0.25)] rounded-2xl relative flex flex-col justify-center items-center gap-5">
+            <p>¿Esta seguro de guardar la informacion?</p>
+
+            <div class="gap-3 flex justify-center w-full">
+                <button class="warning-cancel w-20 h-10 bg-grayd rounded text-white">Cancelar</button>
+                <button class="warning-accept w-20 h-10 bg-redd rounded text-white">Guardar</button>
             </div>
         </div>
     </div>
