@@ -1,3 +1,4 @@
+let body = document.querySelector('.body');
 let vehiclestatus = document.querySelector('.vehicle-status');
 let dataedit = document.querySelector('.data_edit');
 let dataeditsave = document.querySelector('.data_edit_save');
@@ -59,16 +60,34 @@ dataeditcancel.onclick = function () {
 dataeditsave.onclick = function () {
     warning.classList.toggle('invisible')
     warning.classList.toggle('opacity-0')
+    body.classList.add('overflow-hidden')
 }
 
 warningcancel.onclick = function () {
     warning.classList.toggle('invisible')
     warning.classList.toggle('opacity-0')
+    body.classList.remove('overflow-hidden')
 }
 
 warningaccept.onclick = function () {
     warning.classList.toggle('invisible')
     warning.classList.toggle('opacity-0')
+    body.classList.remove('overflow-hidden')
+
+    
+    dataedit.classList.toggle('opacity-0')
+    dataedit.classList.toggle('invisible')
+    dataeditsave.classList.toggle('opacity-0')
+    dataeditsave.classList.toggle('invisible')
+    dataeditcancel.classList.toggle('opacity-0')
+    dataeditcancel.classList.toggle('invisible')
+
+    nptid.disabled = true;
+    nptplate.disabled = true;
+    nptowner.disabled = true;
+    nptmodel.disabled = true;
+    nptstatus.disabled = true;
+    vehiclestatusdot.classList.add('bg-zinc-700')   
 }
 
 vehiclestatus.onclick = function () {
