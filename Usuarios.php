@@ -291,8 +291,8 @@
                         class="mb-8 outline-0 border-black border-b bg-transparent dark:border-redd"><br>
                 </div>
             </form>
-        </div>
 
+            
         <div class="flex justify-center gap-6 right-10 absolute bottom-16 max-sm:static max-sm:gap-2 mb-5">
             <button class="delete-edit-button bg-grayd text-white w-24 h-10 rounded mr-52 max-sm:mr-4 ">Desactivar</button>
             <button class="cancel-edit-button bg-grayd text-white w-20 h-10 rounded">Cancelar</button>

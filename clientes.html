@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/output.css" rel="stylesheet">
     <script>
         let html = document.querySelector('html');
         var checkCookie = function () {
@@ -21,8 +21,8 @@
         }();
         window.setInterval(checkCookie, 1);
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
+
+    <style>
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow:hidden;
@@ -93,10 +93,6 @@
                 animation: norotating .5s forwards;
                 transform: rotate(180deg);
             }
-        }
-    </style>
-
-    <style>
 
         @keyframes norotating {
             50% {
@@ -176,7 +172,7 @@
             <ion-icon name="people" class="ion-title text-black-100 mr-6 dark:text-white max-sm:ml-2 max-sm:mr-0"></ion-icon>
             <p class="text-cardtitle">Registro de Cliente</p>
           </div>
-          <form method="post" action="Clientes.php" class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-8 max-sm:text-center">
+          <form method="post" action="Clientes.html" class="mt-14 flex justify-center max-sm:block max-sm:mx-16 max-sm:mt-8 max-sm:text-center">
                 <div class="mb-12 mr-16 max-sm:mr-1 max-sm:mb-1">
                 <label for="documento" class="">Tipo de Documento</label><br>
                 <select name="reg_id_type" id="documento"
